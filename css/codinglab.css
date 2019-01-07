@@ -1,0 +1,270 @@
+body, html {
+  /* font-family: 'Noto Sans TC','FontAwesome','Roboto', sans-serif; */
+  font-family: 'Noto Sans TC','FontAwesome', sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	width: 100% !important;
+  height: 100% !important;
+  min-height: 35rem;
+  position: relative;
+}
+
+body{
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+}
+
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .display-6 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .display-7 {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .vh-100{
+      height:100vh !important;
+  }
+  .vh-90{
+      height:90vh !important;
+  }
+  .vh-80{
+      height:80vh !important;
+  }
+  .vh-70{
+      height:70vh !important;
+  }
+  .vh-60{
+      height:60vh !important;
+  }
+  .vh-50{
+      height:50vh !important;
+  }
+  .vh-40{
+      height:40vh !important;
+  }
+  .vh-30{
+      height:30vh !important;
+  }
+  .vh-20{
+      height:20vh !important;
+  }
+  .vh-10{
+      height:10vh !important;
+  }
+
+  .mycol-1{
+    border-radius: 20px;
+    padding:10px; 
+    margin:20px;
+  }
+  
+  .mycol-2{
+    border-radius: 20px;
+    padding:10px; 
+    margin:20px 20px 0 0;
+  }
+
+    .myheadbg{
+    background-color:#66aaeee0; 
+    padding:20px;
+  }
+  .myconbg{
+    background-color:#ffffff60;
+  }
+
+/* ========= 修改 Bootstrap 樣式 ========= */
+
+/* 修改導覽列 */
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  color: #fff;
+}
+/* 導覽列上的選單文字顏色 */
+.navbar-dark .navbar-nav .nav-link {
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: #007bff;
+}
+/* 滑鼠移動到導覽列上的選單文字顏色 */
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  /* color: rgba(255, 255, 255, 0.75); */
+  color: #007bffE0;
+}
+/* 導覽列上禁用文字顏色 */
+.navbar-dark .navbar-nav .nav-link.disabled {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* 導覽列上選單啟動的顏色 */
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-dark .navbar-text a {
+  color: #fff;
+}
+
+.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
+  color: #fff;
+}
+
+/* Bootstrap 下拉選單修改 */
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #16181b;
+  text-decoration: none;
+  /* background-color: #f8f9fa; */
+  background-color:#66aaeee0;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
+}
+
+.dropdown-item.disabled, .dropdown-item:disabled {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-header {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.dropdown-item-text {
+  display: block;
+  padding: 0.25rem 1.5rem;
+  color: #212529;
+}
+
+
+ /* ================ Bootstrap 背景及文字新增 ============================== */
+  .text-white{
+    color:#DDD;
+  }
+  
+  .bg-white{
+    background-color:#DDD;
+  }
+
+  .bg-black{
+    background-color:#000;
+  }
+
+
+  .text-shadow-bu1{
+    text-shadow: 1px 1px #00F;
+  }
+  .text-shadow-w1{
+    text-shadow: 1px 1px #DDD;
+  }
+
+
+/* ========= ComingSoon 頁面使用的CSS ========= */
+  .masthead {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 3rem;
+    z-index: 2;
+    top: -10px;
+  }
+  
+  .masthead .masthead-bg {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    min-height: 35rem;
+    height: 93%;
+    background-color: rgba(0, 46, 102, 0.8);
+  }
+  
+  .masthead .masthead-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .masthead .masthead-content p {
+    font-size: 1.2rem;
+  }
+  
+  .masthead .masthead-content p strong {
+    font-weight: 700;
+    
+  }
+  
+  
+  @media (min-width: 768px) {
+    .masthead {
+      height: 100%;
+      min-height: 0;
+      width: 40.5rem;
+      padding-bottom: 0;
+    }
+    .masthead .masthead-bg {
+      min-height: 0;
+      transform: skewX(-8deg);
+      transform-origin: top right;
+    }
+    .masthead .masthead-content {
+      padding-left: 3rem;
+      padding-right: 10rem;
+    }
+    .masthead .masthead-content h1 {
+      font-size: 3.5rem;
+    }
+    .masthead .masthead-content p {
+      font-size: 1.3rem;
+    }
+  }

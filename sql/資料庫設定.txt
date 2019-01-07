@@ -1,0 +1,44 @@
+﻿資料庫設定
+
+player 資料表
+	p_seq		索引		INT
+	p_id		帳號		TEXT
+	p_pw		密碼		TEXT
+	p_name		名字		TEXT
+	p_nick		暱稱		TEXT
+	p_sex		性別		INT(1)		對應 player_sex 索引
+	p_email		電子郵件	TEXT
+	p_permit	權限		INT(1)		對應 player_permission 索引
+	p_ctime		建立時間	DATETIME
+	p_del		刪除		INT(1)
+
+player_sex 資料表
+	p_s_seq		索引		INT
+	p_s_sex		名稱		TEXT
+
+player_permission 資料表
+	p_p_seq		索引		INT
+	p_p_permit	名稱		TEXT
+
+gbuy 資料表
+	g_seq		索引		INT
+	g_p_id		建立者		INT		對應 player 索引
+	g_name		名稱		TEXT
+	g_pname		產品名稱	TEXT
+	g_pic		圖片名稱	TEXT
+	g_con		說明		TEXT
+	g_oprice	原價		INT
+	g_gprice	團購價		INT
+	g_sprice	特惠價		INT
+	g_onum		限量		INT
+	g_rnum		剩餘數量	INT
+	g_stime		開始時間	DATE
+	g_endtime	結束時間	DATE
+	g_close		結束否		INT(1)
+	g_del		刪除否		INT(1)
+
+gbuy_buyer 資料表
+	g_b_seq		索引		INT
+	g_b_pno		團購編號	INT		對應 gbuy 索引
+	g_b_buyer	購買者編號	INT		對應 player 索引
+	g_b_num		購買數量	INT
