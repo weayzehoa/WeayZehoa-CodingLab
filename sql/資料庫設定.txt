@@ -42,3 +42,25 @@ gbuy_buyer 資料表
 	g_b_pno		團購編號	INT		對應 gbuy 索引
 	g_b_buyer	購買者編號	INT		對應 player 索引
 	g_b_num		購買數量	INT
+	g_b_price	購買單價	INT		由php計算參與人數變換
+	g_b_total	購買總計	INT
+	g_b_time	參加團購時間	datetime
+	g_b_del		取消參加團購標記INT(1)
+
+msgboard 資料表
+	m_seq		索引
+	m_name		留言者
+	m_email		留言者email
+	m_title		標題
+	m_con		內容
+	m_time		留言時間
+	m_del		刪除否
+
+msgboard_reply 資料表
+	m_r_seq		索引
+	m_r_no		留言編號
+	m_r_name	回覆者名字
+	m_r_email	回覆者email
+	m_r_con		回覆內容
+	m_r_time	回覆時間
+	m_r_del		刪除否

@@ -15,14 +15,13 @@
 <!-- 團購歡迎畫面 -->
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>本系統是我的期末作業, 僅供瀏覽操作參考, 並無真正的產品團購.</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <!-- 團購列表 --> 
                 <h3>目前共有 <?=$num?> 個團購正在進行中, 歡迎一起加入撿便宜行列.</h3>
                 <h3>想當團長造福會員們嗎?! 點+圖案創一個團購.</h3>
@@ -38,7 +37,8 @@
                     </div>
                     
                 <?php } while($row = mysqli_fetch_assoc($ro));?>
-<!-- 
+                    
+                    <!-- 
                     <div class="col-3 align-self-center">
                         <div style="border-radius:10px;" class="border border-primary shadow bg-white text-center text-primary align-self-center">
                         <h5 class="font-weight-bold">我是超讚響亮亮的團購</h5>
@@ -48,7 +48,7 @@
                     </div> -->
                 
                 <?php
-                    if(!empty($_SESSION)){
+                    if(!empty($_SESSION['id'])){
                         
                         echo '
                         <div id="gb_new" class="col-3 align-self-center">
@@ -72,7 +72,7 @@
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <!-- 團購列表 --> 
                 <h3>目前共有 <?=$num1?> 個團購關閉中, 無法參加或修改, 只有發起人才可以開啟或修改資料.</h3>
                 <div class="row">

@@ -16,11 +16,6 @@ if (!empty($_SESSION["id"])) {
 ?>
 
 
-<style>
-body{
-    margin-top: 65px;/* make room for the nav bar */
-}
-</style>
 <!-- <body class="bg-info"> -->
 <!-- <body style="background-color: rgba(0, 255, 255, 0.7)"> -->
 <!-- <body style="background-image: url(img/bg.jpg)"> -->
@@ -43,18 +38,42 @@ body{
             <li class="nav-item">
                 <a class="nav-link" href="?menu=1&g=acc"><i class="fas fa-tools text-white"></i>&nbsp;帳號管理</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?menu=2&g=gbuy"><i class="fas fa-shopping-cart text-white"></i>&nbsp;團購管理</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-cart text-white"></i>&nbsp;團購管理</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="?menu=2&g=gbuy"><i class="fas fa-shopping-cart text-dark"></i>&nbsp;新增與變更</a>
+                    <a class="dropdown-item" href="?menu=2&g=gbuy_buyer"><i class="far fa-handshake text-dark"></i>&nbsp;參與者管理</a>
+                </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=2&g=olsv_list"><i class="fas fa-comments text-white"></i>&nbsp;無登入線上客服系統</a>
+            </li>                
+            <li class="nav-item">
+                <a class="nav-link" href="?menu=4&g=clm"><i class="fas fa-calendar-alt text-white"></i>&nbsp;課程管理</a>
+            </li>
+            <!-- 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments text-white"></i>&nbsp;線上客服系統</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="?menu=2&g=olsv_list"><i class="fas fa-comments text-dark"></i>&nbsp;無登入線上客服系統</a>
+                    <a class="dropdown-item" href="?menu=2&g=molsv_list"><i class="fas fa-comments text-dark"></i>&nbsp;會員線上客服系統</a>
+                </div>
+            </li> -->
+
             <!-- <li class="nav-item">
                 <a class="nav-link" href="?menu=3&g=comingsoon"><i class="fas fa-images text-white"></i>&nbsp;相簿管理</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?menu=4&g=comingsoon"><i class="fas fa-calendar-alt text-white"></i>&nbsp;課程管理</a>
+                <a class="nav-link" href="?menu=4&g=clm"><i class="fas fa-calendar-alt text-white"></i>&nbsp;課程管理</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?menu=5&g=comingsoon"><i class="fas fa-comments text-white"></i>&nbsp;客服系統</a>
-            </li>                <li class="nav-item">
+                <a class="nav-link" href="?menu=5&g=olsv_list"><i class="fas fa-comments text-white"></i>&nbsp;客服系統</a>
+            </li>                
+            <li class="nav-item">
                 <a class="nav-link" href="?menu=6&g=comingsoon"><i class="fas fa-chalkboard-teacher text-white"></i>&nbsp;作品管理</a>
             </li>
             <li class="nav-item">

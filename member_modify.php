@@ -23,16 +23,15 @@ if(!empty($_POST["id"]) && $_SESSION["id"]==$_POST["id"]){
 ?>
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>網站的會員資料修改</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark vh-90 mycol">
                 <form method="post">
-                    <div class="form-group col-6 offset-3">
+                    <div class="form-group col-6 offset-3  padding-top100">
                         <label>帳號 (ID)</label>
                         <input type="text" name="id" class="form-control" readonly required value="<?=$row["p_id"]?>">
                     </div>

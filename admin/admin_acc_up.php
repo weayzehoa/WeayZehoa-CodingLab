@@ -44,38 +44,39 @@ if (!empty($_POST["oldpw"])) {
 
 ?>
 
-<div class="container col-8 bg-primary text-white text-center border-bottom">
-<div style="height:20px"></div>
-<h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室 後台管理系統</h2><br>
-<h4>本密碼修改頁面僅限有管理者權限才能登入. 新密碼長度限制 8-16 字元.</h4>
-<div style="height:20px"></div>
+<div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
+    <h4>本頁面僅限有管理者權限才能登入. (guest帳號可以唯讀方式進入)</h4>
 </div>
 
-<div class="container col-8 bg-secondary text-white-50 vh-70"><br>
-
+<div class="container col-8 myconbg">
     <div class="row">
-        <div class="col-8 offset-3">
-        <form method="post">
-                <div class="form-group col-8">
-                    <p>新密碼長度限制8-16字元.</p>
-                    <br>
-                    舊密碼
-                    <input type="password" name="oldpw" class="form-control" placeholder="請輸入舊密碼.">
+        <div class="col-12">
+            <div class="bg-white text-dark mycol vh-90">
+                <div class="col-8 offset-3">
+                    <form method="post">
+                        <div class="form-group col-8">
+                            <p>新密碼長度限制8-16字元.</p>
+                            <br>
+                            舊密碼
+                            <input type="password" name="oldpw" class="form-control" placeholder="請輸入舊密碼.">
+                        </div>
+                        <div class="form-group col-8">
+                            <br>
+                            新密碼
+                            <input type="password" name="newpw" class="form-control" placeholder="請輸入新密碼.">
+                            <br>
+                        </div>
+                        <div class="form-group  col-8">
+                            再次輸入<input type="password" name="again" class="form-control"placeholder="請再次輸入新密碼.">
+                        </div>  
+                            <p></p>
+                            <br>
+                            <button type="submit" class="col-2 offset-1 btn btn-primary">送出</button>
+                            <button type="reset" class="col-2 offset-1 btn btn-primary">清除</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group col-8">
-                    <br>
-                    新密碼
-                    <input type="password" name="newpw" class="form-control" placeholder="請輸入新密碼.">
-                    <br>
-                </div>
-                <div class="form-group  col-8">
-                    再次輸入<input type="password" name="again" class="form-control"placeholder="請再次輸入新密碼.">
-                </div>  
-                    <p></p>
-                    <br>
-                    <button type="submit" class="col-2 offset-1 btn btn-primary">送出</button>
-                    <button type="reset" class="col-2 offset-1 btn btn-primary">清除</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

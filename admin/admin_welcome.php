@@ -7,17 +7,13 @@ $row = mysqli_fetch_assoc($ro);
 <body onload="ShowTime()">
 <!-- 後台管理系統歡迎畫面 -->
     <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
-        <h4>本頁面僅限有管理者權限才能登入. (guest帳號可以唯讀方式進入)</h4>
-        <form id="form1" runat="server">
-            <div id="showtime"></div>
-        </form>
+        <h4>歡迎來到 WeayZehoa Coding Lab. 後台管理，本頁面僅限有管理者權限才能登入. (guest帳號可以唯讀方式進入參觀)</h4>
     </div>
 
-    <div class="container col-8 myconbg">
+    <div class="container col-8 vh-90 myconbg">
         <div class="row">
             <div class="col-9">
-                <div class="bg-white text-dark mycol-1">
+                <div class="bg-white text-dark mycol">
                     <h4>嗨!
                         <?=$row["p_nick"]?>，你好</h4>
                     <h5>
@@ -28,32 +24,36 @@ $row = mysqli_fetch_assoc($ro);
                         <p>歡迎您測試與瀏覽，並不吝指教。(目前尚有些驗證尚未做得很完善，請高手們指導，感謝。)</p>
                     </h5>
                     <br>
-                    <p>目前進度：期末作業－團購系統。</p>
+                    <p>目前進度：課程查詢系統</p>
                     <br>
-                    <p>網站整個 Source Code 放置於 我的 <a href="https://github.com/weayzehoa/WeayZehoa-CodingLab"> GitHub </a>
-                        上。有興趣的朋友可以自行參考。</p>
+
                     <br>
                     <p></p>
                     <br>
                 </div>
-                <!-- <div class="bg-white text-dark mycol-1">第一欄第二列</div>
-                <div class="bg-white text-dark mycol-1">第一欄第三列</div>
-                <div class="bg-white text-dark mycol-1">第一欄第四列</div>
-                <div class="bg-white text-dark mycol-1">第一欄第五列</div> -->
+                <!-- <div class="bg-white text-dark mycol">第一欄第二列</div>
+                <div class="bg-white text-dark mycol">第一欄第三列</div>
+                <div class="bg-white text-dark mycol">第一欄第四列</div>
+                <div class="bg-white text-dark mycol">第一欄第五列</div> -->
             </div>
 
             <div class="col-3">
-                <!-- <div class="bg-white mycol-2">月曆預定地</div>
-                <div class="bg-white mycol-2">數位時鐘預定地</div>
-                <div class="bg-white mycol-2">類比時鐘預定地</div>
-                <div class="bg-white mycol-2">第二欄第三列</div>
-                <div class="bg-white mycol-2">第二欄第三列</div>
-                <div class="bg-white mycol-2">第二欄第三列</div>
-                <div class="bg-white mycol-2">訪客數</div> -->
-                <div class="bg-white mycol-2">
+                <!-- <div class="bg-white mycol">月曆預定地</div>
+                <div class="bg-white mycol">數位時鐘預定地</div>
+                <div class="bg-white mycol">類比時鐘預定地</div>
+                <div class="bg-white mycol">第二欄第三列</div>
+                <div class="bg-white mycol">第二欄第三列</div>
+                <div class="bg-white mycol">第二欄第三列</div>
+                <div class="bg-white mycol">訪客數</div> -->
+                <div class="bg-white mycol">
+                    <form id="form1" runat="server">
+                        <div id="showtime"></div>
+                    </form>
+                </div>
+                <div class="bg-white mycol">
                     <?php $ip = getip(); echo $ip; ?>
                 </div>
-                <div class="bg-white mycol-2">
+                <div class="bg-white mycol">
                     <?php echo "你的瀏覽器資訊：<br>".$_SERVER['HTTP_USER_AGENT']; ?>
                 </div>
             </div>

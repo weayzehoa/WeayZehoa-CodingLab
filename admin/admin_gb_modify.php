@@ -13,7 +13,6 @@
 ?>
 <!-- 團購歡迎畫面 -->
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>本系統是我的期末作業, 僅供瀏覽操作參考, 並無真正的產品團購.</h4>
 </div>
 
@@ -21,7 +20,7 @@
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <form method="POST" enctype="multipart/form-data">
                 <div class="row">
                 
@@ -35,26 +34,37 @@
                         <div class="border-bottom"></div>
                         <div style="max-height:350px" class="text-white">
                             <h4 class="border-bottom">目前共 <?=$num1?> 人參加此團購</h4>
-                            <table width="100%" class="border-bottom">
-                                <tr class="border-bottom">
-                                    <td class="text-center">參加人</td>
-                                    <td class="text-center">訂購數量</td>
-                                    <td class="text-center">改數量</td>
-                                    <td class="text-center">取消</td>
-                                </tr>
-                                <?php   $sql = "SELECT * from player a, gbuy b, gbuy_buyer c where b.g_seq = '".$_GET["gseq"]."' and c.g_b_buyer = a.p_seq and c.g_b_pno = b.g_seq and a.p_del = 0 and b.g_del = 0 and c.g_b_del = 0";
-                                        $ro2 = mysqli_query($link,$sql);
-                                        $row2 = mysqli_fetch_assoc($ro2);
+
+                            <?php
+                                if($num1>=1){ ?>
+                                    <table width="100%" class="border-bottom">
+
+                                    <tr class="border-bottom">
+                                        <td class="text-center">參加人</td>
+                                        <td class="text-center">訂購數量</td>
+                                        <td class="text-center">改數量</td>
+                                        <td class="text-center">取消</td>
+                                    </tr>
+
+                                    <?php   $sql = "SELECT * from player a, gbuy b, gbuy_buyer c where b.g_seq = '".$_GET["gseq"]."' and c.g_b_buyer = a.p_seq and c.g_b_pno = b.g_seq and a.p_del = 0 and b.g_del = 0 and c.g_b_del = 0";
+                                            $ro2 = mysqli_query($link,$sql);
+                                            $row2 = mysqli_fetch_assoc($ro2);
+                                        
                                         do { ?>
-                                <tr>
-                                    <td class="text-center"><?=$row2['p_name'];?></td>
-                                    <td class="text-center"><?=$row2['g_b_num'];?></td>
                                     
-                                    <td class="text-center"><button onclick="admin_gb_change('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>','<?=$row2['g_b_num']?>')" type="button" class="form-control bg-primary text-warning btn-sm">改數量</button></td>
-                                    <td class="text-center"><button onclick="admin_order_cancel('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>')" type="button" class="form-control bg-primary text-warning btn-sm">取消</button></td>
-                                </tr>
-                                <?php  } while($row2 = mysqli_fetch_assoc($ro2));?>
-                            </table>
+                                    <tr>
+                                        <td class="text-center"><?=$row2['p_name'];?></td>
+                                        <td class="text-center"><?=$row2['g_b_num'];?></td>
+                                        
+                                        <td class="text-center"><button onclick="admin_gb_change('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>','<?=$row2['g_b_num']?>')" type="button" class="form-control bg-primary text-warning btn-sm">改數量</button></td>
+                                        <td class="text-center"><button onclick="admin_order_cancel('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>')" type="button" class="form-control bg-primary text-warning btn-sm">取消</button></td>
+                                    </tr>
+
+                                    <?php  } while($row2 = mysqli_fetch_assoc($ro2));?>
+    
+                                    </table>
+                            <?php } ?>
+
                         </div>
                     </div>
                     

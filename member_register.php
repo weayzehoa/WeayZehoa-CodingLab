@@ -7,22 +7,21 @@
             $sql = "INSERT into player value(null,'".$_POST["id"]."','".md5($_POST["pw"])."','".$_POST["name"]."','".$_POST["nick"]."','".$_POST["sex"]."','".$_POST["email"]."',3,'".$time."',0)";
             mysqli_query($link,$sql);
         }else{
-            echo "<script>alert('抱歉, 該帳號已有人使用');</script>";
+            echo "<script>alert('抱歉, 該帳號ID已有人使用');</script>";
         }
     }
 ?>
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>網站的會員註冊頁面, 預設權限 一般會員</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark vh-90 mycol">
                 <form method="POST">
-                    <div class="form-group col-6 offset-3">
+                    <div class=" padding-top100 form-group col-6 offset-3">
                         <label>帳號 (ID)</label>
                         <input type="text" name="id" class="form-control" required>
                     </div>

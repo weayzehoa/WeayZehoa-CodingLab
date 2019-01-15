@@ -37,17 +37,16 @@ if (!empty($_POST["oldpw"])) {
 ?>
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>網站的會員密碼修改</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol vh-90">
                 <div class="col-8 offset-3">
                     <form method="post">
-                        <div class="form-group col-8">
+                        <div class="form-group  padding-top100 col-8">
                             <p>新密碼長度限制8-16字元.</p>
                             <br>
                             舊密碼

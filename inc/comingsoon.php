@@ -6,7 +6,7 @@
 
 <div style="height:750px" class="myconbg container col-8 ">
 <br>
-    <div style="background: url('img/bg-mobile-fallback.jpg') #002E66 no-repeat center center scroll; height:670px;top: -20px; left:-20px" class="container col-12  mycol-1">
+    <div style="background: url('img/bg-mobile-fallback.jpg') #002E66 no-repeat center center scroll; height:670px;top: -20px; left:-20px" class="container col-12  mycol">
         <br>
         <div class="masthead">
         <div class="masthead-bg"></div>

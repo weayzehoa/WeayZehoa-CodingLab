@@ -115,19 +115,18 @@
 }
 </style>
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-    <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室 作品集</h2><br>
     <h4>這頁面是 我自己使用 JQuery 撰寫的 照片輪播功能</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <br>
                     <p>
                     說明：此輪播頁面, 程式採用JQuery方式. <br>
                     1. 一開始直接隨機顯示一張照片, 每五秒自動顯示下一張照片, 從右邊滑動進來.<br>
-                    2. 按左邊粉紅色區域, 下一張照片會從右邊滑動進來. 按右邊粉紅色區域, 上一張照片從左邊滑動進來.<br>
+                    2. 按左邊區域, 下一張照片會從右邊滑動進來. 按右邊區域, 上一張照片從左邊滑動進來.<br>
                     3. 中間按鈕選單, 按了按鈕顯示區選定的圖片會從右邊滑入.<br>
                     4. 這頁面加上下方圖片選單, 按了圖片顯示區會從左邊滑入.
                     </p>

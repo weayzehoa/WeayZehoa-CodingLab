@@ -92,6 +92,7 @@ function get_sex(){
     }while ($row = mysqli_fetch_assoc($ro));
     return $s;
   }
+
 //抓取權限資料表
   function get_permit(){
     $link = mysqli_connect("localhost", "root", "", "codinglab");
@@ -121,6 +122,35 @@ function get_player(){
     }while($row6 = mysqli_fetch_assoc($ro6));
         return $player;    
 }
+
+//抓取課程老師名字資料表
+function get_clteacher(){
+    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    mysqli_query($link, "set names utf8");
+    $sql = "SELECT * from class_teacher";
+    $ro = mysqli_query($link,$sql);
+    $row = mysqli_fetch_assoc($ro);
+    do{
+        $teacher['seq'][] = $row['c_t_seq'];
+        $teacher['name'][] = $row['c_t_name'];
+    }while($row = mysqli_fetch_assoc($ro));
+        return $teacher;
+}
+
+//抓取課程名稱資料表
+function get_clname(){
+    $link = mysqli_connect('localhost','root','','codinglab');
+    mysqli_query($link,"set names utf8");
+    $sql = "SELECT * from class_name";
+    $ro = mysqli_query($link,$sql);
+    $row = mysqli_fetch_assoc($ro);
+    do{
+        $clname['seq'][] = $row['c_n_seq'];
+        $clname['name'][] = $row['c_n_name'];
+    }while($row = mysqli_fetch_assoc($ro));
+        return $clname;
+}
+
 
 //抓取會員IP
   function getip(){

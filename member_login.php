@@ -4,36 +4,43 @@
         exit();
     }
 
-    if( !empty($_POST["myid"]) ){
-        if( !empty($_POST["mypw"]) ){
-            $sql = "SELECT * from player where p_del = 0 and p_id = '".$_POST["myid"]."' and p_pw = '".md5($_POST["mypw"])."'";
-            //$sql = "SELECT * from player where p_id = '".$_POST["myid"]."' and p_pw = '".$_POST["mypw"]."'";
-            $ro = mysqli_query($link,$sql);
-            $check = mysqli_num_rows($ro);
-            $row = mysqli_fetch_assoc($ro);
-            if( $check == 1 ){
-                $_SESSION["id"] = $_POST["myid"];
-                $_SESSION["nick"] = $row["p_nick"];
-                $_SESSION["permit"] = $row["p_permit"];
-                // $_SESSION["mem_login"] = '<a href="admin.php">後台管理</a><br><br>(嗨,'.$_SESSION["nick"].') <a href="logout.php">登出</a><br><a href="member.php">會員資料修改</a>';
+    if( !empty($_POST["myid"]) && !empty($_POST["mypw"]) ){
+
+        $sql = "SELECT * from player where p_id = '".$_POST['myid']."'";
+        $ro = mysqli_query($link,$sql);
+        $check_id = mysqli_num_rows($ro);
+        $row = mysqli_fetch_assoc($ro);
+
+        if($check_id==0){
+            echo '<script>alert("抱歉, 該帳號不存在, 請重新輸入 或 註冊一個新的.");</script>';
+        }else{
+            if($row['p_del']==1){
+                echo '<script>alert("抱歉該帳號已被停權");</script>';
+            }else{
+                if( $row['p_pw'] == md5($_POST['mypw']) ){
+                    $_SESSION["id"] = $_POST["myid"];
+                    $_SESSION["nick"] = $row["p_nick"];
+                    $_SESSION["permit"] = $row["p_permit"];
+                    ?><script>document.location.href="index.php";</script><?php
+                }else{
+                    echo '<script>alert("抱歉, 密碼錯誤, 請重新輸入.");</script>';
+                    ?><script>document.location.href="?g=login";</script><?php
+                }
             }
         }
-        ?><script>document.location.href="index.php";</script><?php
-        exit();    
     }
 
 ?>
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>網站的會員登入</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
-                <div class="col-8 offset-2 text-center">
+            <div class="bg-white text-dark vh-90 mycol">
+                <div class="col-8 offset-2 padding-top50 text-center">
                     <p></p>
                     <br>
                     <h5>訪客可使用 帳號 : guest  密碼: guest (權限已設定唯讀) 登入參觀.<br><br>

@@ -1,5 +1,5 @@
 <?php
-    if(!empty($_SESSION)){
+    if(!empty($_SESSION['id'])){
         if($_SESSION['permit'] == 2){
             ?><script>alert('訪客或唯讀帳號無法使用本團購系統, 請先註冊或登入一般會員.');</script><?php
             ?><script>document.location.href="?g=login";</script><?php    
@@ -58,14 +58,13 @@
 
 <!-- 本站歡迎畫面 -->
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>會員團購列表, 本系統是我的期末作業, 僅供瀏覽操作參考, 並無真正的產品團購.</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <h4>你目前共參加 <?=$num1?> 個團購，共計 <?=$total_price?> 元。你目前共發起 <?=$num3+$num4?> 個團購，關閉中 <?=$num4?> 團，進行中 <?=$num3?> 團，預計進行中的團購收入 <?=$total_incoming?> 元。</h4>
             </div>
         </div>
@@ -82,7 +81,7 @@
         ?>
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <div class="row">
                     <div class="col-3 align-self-center">
                         <div style="border-radius:10px; max-height:250px" class="shadow bg-white text-center text-primary align-self-center">

@@ -1,14 +1,13 @@
 //上標題位置區域
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
-        <h4> </h4>
+        <h4>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h4>
 </div>
 
 //內容區域
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-9">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
 
             <h4>嗨! 你好，</h4>
             <h5>
@@ -26,25 +25,25 @@
             <br>
             
             </div>
-            <div class="bg-white text-dark mycol-1">第一欄第二列</div>
-            <div  class="bg-white text-dark mycol-1">第一欄第三列</div>
-            <div  class="bg-white text-dark mycol-1">第一欄第四列</div>
-            <div  class="bg-white text-dark mycol-1">第一欄第五列</div>
+            <div class="bg-white text-dark mycol">第一欄第二列</div>
+            <div  class="bg-white text-dark mycol">第一欄第三列</div>
+            <div  class="bg-white text-dark mycol">第一欄第四列</div>
+            <div  class="bg-white text-dark mycol">第一欄第五列</div>
 
         </div>
 
 
 
         <div class="col-3">
-            <div class="bg-white mycol-2" >月曆預定地</div>
-            <div class="bg-white mycol-2" >數位時鐘預定地</div>
-            <div class="bg-white mycol-2" >類比時鐘預定地</div>
-            <div class="bg-white mycol-2" >第二欄第三列</div>
-            <div class="bg-white mycol-2" >第二欄第三列</div>
-            <div class="bg-white mycol-2" >第二欄第三列</div>
-            <div class="bg-white mycol-2" >訪客數預定地</div>
-            <div class="bg-white mycol-2" ><?php $ip = getip(); echo $ip; ?></div>
-            <div class="bg-white mycol-2" ><?php echo "你的瀏覽器資訊：<br>".$_SERVER['HTTP_USER_AGENT']; ?></div>
+            <div class="bg-white mycol" >月曆預定地</div>
+            <div class="bg-white mycol" >數位時鐘預定地</div>
+            <div class="bg-white mycol" >類比時鐘預定地</div>
+            <div class="bg-white mycol" >第二欄第三列</div>
+            <div class="bg-white mycol" >第二欄第三列</div>
+            <div class="bg-white mycol" >第二欄第三列</div>
+            <div class="bg-white mycol" >訪客數預定地</div>
+            <div class="bg-white mycol" ><?php $ip = getip(); echo $ip; ?></div>
+            <div class="bg-white mycol" ><?php echo "你的瀏覽器資訊：<br>".$_SERVER['HTTP_USER_AGENT']; ?></div>
         </div>
     </div><br>
 </div>

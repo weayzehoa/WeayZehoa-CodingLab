@@ -1,5 +1,5 @@
 <?php
-if(empty($_SESSION)){
+if(empty($_SESSION['id'])){
     ?><script>alert('抱歉, 您尚未登入, 無法變更團購資料');</script><?php
     ?><script>document.location.href="?g=gb"</script><?php
 }else{
@@ -23,7 +23,6 @@ if(empty($_SESSION)){
 ?>
 <!-- 團購歡迎畫面 -->
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>本系統是我的期末作業, 僅供瀏覽操作參考, 並無真正的產品團購.</h4>
 </div>
 
@@ -31,7 +30,7 @@ if(empty($_SESSION)){
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <form method="POST" enctype="multipart/form-data">
                 <div class="row">
                 

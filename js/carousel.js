@@ -5,8 +5,8 @@ var pic920 = [];
 var title = [];
 var word = [];
     for(i=0;i<=15;i++){
-        pic200[i] = "images/2m-"+(i+1)+".jpg";
-        pic920[i] = "images/92m-"+(i+1)+".jpg";
+        pic200[i] = "./img/carousel/2m-"+(i+1)+".jpg";
+        pic920[i] = "./img/carousel/92m-"+(i+1)+".jpg";
     }
 
 // ====================== 亂數隨機功能 ================================

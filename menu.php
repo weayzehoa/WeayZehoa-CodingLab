@@ -18,7 +18,7 @@
 <style>
 
 body{
-    margin-top: 65px; /* make room for the nav bar */
+    /* margin-top: 65px; make room for the nav bar */
 }
 </style>
 
@@ -26,8 +26,10 @@ body{
 <!-- <body style="background-color: rgba(0, 255, 255, 0.7)"> -->
 <!-- <body style="background-image: url(img/bg.jpg);"> -->
 <body style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(img/bg.jpg);">
+<!-- <body style="background-image: url(img/bg2.jpg); background-size:cover"> -->
 
 
+    <!-- <nav style="background-color:transparent;" class="navbar navbar-expand-xl navbar-dark bg-black border-bottom fixed-top"> -->
     <nav class="navbar navbar-expand-xl navbar-dark bg-black border-bottom fixed-top">
         <a class=" offset-1 col-2 navbar-brand" href="index.php"><img src="img/logo.png"></a>
         <!-- <a class=" offset-1 navbar-brand" href="#">WeayZehoa Coding Lab.</a> -->
@@ -47,6 +49,7 @@ body{
                 <li class="nav-item">
                     <a class="nav-link" href="?g=gb"><i class="fas fa-shopping-cart text-white"></i>&nbsp;團購系統</a>
                 </li>
+
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
@@ -54,10 +57,11 @@ body{
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-place-of-worship text-white"></i>&nbsp;期末作業</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?menu=1&g=acc"><i class="fas fa-address-card text-dark"></i>&nbsp;會員管理系統<span class="text-danger">&nbsp;(後臺)</span></a>
-                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-calendar-alt text-dark"></i>&nbsp;課程查詢系統</a>
-                        <a class="dropdown-item" href="?g=gb"><i class="fas fa-shopping-cart text-dark"></i>&nbsp;團購系統</a>
-                        <div class="dropdown-divider"></div>
-                        <div class="text-danger text-center">請先登入</div>
+                        <a class="dropdown-item" href="?g=course"><i class="fas fa-calendar-alt text-dark"></i>&nbsp;課程查詢系統</a>
+                        <a class="dropdown-item" href="?g=gb"><i class="fas fa-shopping-cart text-dark"></i>&nbsp;團購系統<span class="text-danger">&nbsp;(需登入)</span></a>
+                        <!-- <a class="dropdown-item" href="?g=member_service"><i class="fas fa-comments text-dark"></i>&nbsp;會員線上客服</a> -->
+                        <!-- <div class="dropdown-divider"></div>
+                        <div class="text-danger text-center">請先登入</div> -->
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -66,28 +70,33 @@ body{
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?g=bootstrap-carousel"><i class="fas fa-images text-dark"></i>&nbsp;Bootstrap相片輪播</a>
                         <a class="dropdown-item" href="?g=noncover-carousel"><i class="fas fa-images text-dark"></i>&nbsp;非覆蓋式相片輪播</a>
-                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-images text-dark"></i>&nbsp;覆蓋式相片輪播</a>
+                        <!-- <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-images text-dark"></i>&nbsp;覆蓋式相片輪播</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-sort-numeric-down text-dark"></i>&nbsp;猜數字遊戲</a>
-                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-images text-dark"></i></i>&nbsp;相片動畫</a>
+                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-images text-dark"></i></i>&nbsp;相片動畫</a> -->
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-comment-alt text-dark"></i>&nbsp;留言板</a>
-                        <a class="dropdown-item" href="?g=comingsoon"><i class="fas fa-comments text-dark"></i>&nbsp;線上客服</a>
+                        <a class="dropdown-item" href="?g=msgboard"><i class="fas fa-comment-alt text-dark"></i>&nbsp;留言板</a>
+                        <a class="dropdown-item" href="?g=online_service"><i class="fas fa-comments text-dark"></i>&nbsp;無登入線上客服</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?g=clock"><i class="far fa-clock text-dark"></i>&nbsp;時鐘</a>
                     </div>
                 </li>
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=no&g=resume"><i class="fas fa-address-book text-white"></i>&nbsp;履歷</a>
+                    <a class="nav-link" href="?g=resume"><i class="fas fa-address-book text-white"></i>&nbsp;履歷</a>
+                    <!-- <a class="nav-link" href="?menu=no&g=resume"><i class="fas fa-address-book text-white"></i>&nbsp;履歷</a> -->
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher text-white"></i>&nbsp;作品</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-primary" href="?g=portfolio#photoshop"><i class="fas fa-images text-dark"></i>&nbsp;Photoshop作品</a>
-                        <a class="dropdown-item" href="?g=portfolio#illstrator"><i class="fas fa-images text-dark"></i>&nbsp;illstrator作品</a>
+                        <a class="dropdown-item" href="?g=pf_pr"><i class="fas fa-archive text-dark"></i>&nbsp;產品企劃開發</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="?g=portfolio#website"><i class="fas fa-code text-dark"></i>&nbsp;網站作品</a>
+                        <a class="dropdown-item" href="?g=pf_ps"><i class="fas fa-images text-dark"></i>&nbsp;Photoshop 作品</a>
+                        <a class="dropdown-item" href="?g=pf_il"><i class="fas fa-images text-dark"></i>&nbsp;illustrator 作品</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?g=pf_wb"><i class="fas fa-code text-dark"></i>&nbsp;網站作品</a>
                     </div>
                 </li>
             </ul>

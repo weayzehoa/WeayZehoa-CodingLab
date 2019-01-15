@@ -1,13 +1,16 @@
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>這頁面是 Bootstrap 內建的 Carousel 照片輪播功能.</h4>
 </div>
 
+<!-- Gotop 按鈕 -->
+<div id="gotop_btn" class="d-none">
+	<a type="button" class="col-md-1 offset-10 btn fixed-bottom btn-dark text-white" href="#">Go Top</a>
+</div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <div class="col-10 offset-1">
                     <p>說明：此輪播頁面, 採用 Bootstrap 內建的 Carousel 滑動 輪播. 不需要自己撰寫程式即可使用.</p>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -20,35 +23,35 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="./images/92m-1.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-1.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel 相片輪播</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-2.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-2.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-3.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-3.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-4.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-4.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-5.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-5.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
@@ -74,7 +77,7 @@
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <div class="col-10 offset-1">
                 <p>說明：此輪播頁面, 採用 Bootstrap 內建的 Carousel 淡入淡出 輪播. 不需要自己撰寫程式即可使用.</p>
 
@@ -88,35 +91,35 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="./images/92m-6.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-6.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel 相片輪播</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-7.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-7.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-8.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-8.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-9.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-9.jpg?auto=yes&bg=666&fg=444&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="./images/92m-10.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
+                                <img class="d-block w-100" src="./img/carousel/92m-10.jpg?auto=yes&bg=555&fg=333&text=First slide" alt="Demo Pictures">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Bootstrap 內建的 Carousel</h5>
                                     <p>不需要自己撰寫程式即可使用.</p>
@@ -141,7 +144,7 @@
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <div class="col-10 offset-1">
                     <h3 >選項</h3>
                     <p>可以透過資料屬性或 JavaScript 調整選項。對於資料屬性，將選項名稱附加到 <code class="highlighter-rouge">data-</code>，如 <code class="highlighter-rouge">data-interval=""</code>。</p>

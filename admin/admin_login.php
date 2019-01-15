@@ -24,15 +24,14 @@ check_login();
 ?>
 <!-- 後台管理系統歡迎畫面 -->
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-    <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
     <h4>本頁面僅限有管理者權限才能登入. (guest帳號可以唯讀方式進入)</h4>
 </div>
 
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
-                <div class="col-8 offset-2 text-center">
+            <div class="bg-white text-dark mycol vh-90">
+                <div class="col-8 offset-2 text-center padding-top100">
 
                 <!-- <div class="col-10 offset-1"> -->
                     <br>

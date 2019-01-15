@@ -1,5 +1,5 @@
 <?php
-    if(empty($_SESSION)){
+    if(empty($_SESSION['id'])){
         ?><script>alert('使用本團購系統, 請先登入會員');</script><?php
         ?><script>document.location.href="?g=login";</script><?php
     }
@@ -53,7 +53,6 @@
 ?>
 
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
-        <h2>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h2><br>
         <h4>本系統是我的期末作業, 僅供瀏覽操作參考, 並無真正的產品團購.</h4>
 </div>
 
@@ -61,7 +60,7 @@
 <div class="container col-8 myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol-1">
+            <div class="bg-white text-dark mycol">
                 <form>
                     <div class="row">
                         <div class="col-4 bg-primary offset-1 ">
@@ -149,7 +148,7 @@
                             <div class="form-row">
                                 <?php
                                     if($row['g_close']==1){
-                                        if(!empty($_SESSION)){
+                                        if(!empty($_SESSION['id'])){
                                             echo '
                                             <input type="hidden" name="myid" value='.$_SESSION["id"].'>
                                             <input type="hidden" name="gseq" value='.$row["g_seq"].'>
@@ -178,7 +177,7 @@
                                 ?>
 
                                 <?php  //若登入者是發起人則顯示修改資料按鈕
-                                    if(!empty($_SESSION)){  //判斷SESSION是否存在
+                                    // if(!empty($_SESSION)){  //判斷SESSION是否存在
                                         if(!empty($_SESSION['id'])){  //判斷是否有登入
                                             if($_SESSION['id']==$row2['p_id']){ //判斷登入者是否為發起人
                                                 echo '
@@ -190,7 +189,7 @@
                                                 ';   
                                             }
                                         }
-                                    }
+                                    // }
 
                                 ?>
                             </div>

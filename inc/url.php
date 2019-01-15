@@ -14,7 +14,14 @@
     $url["memmod"]="./member_modify.php";
     $url["pwchange"]="./member_pwchange.php";
     $url["resume"]="./resume.php";
-    $url["portfolio"]="./roger_portfolio.php";
+    $url["pf_ps"]="./portfolio_photoshop.php";
+    $url["pf_il"]="./portfolio_illustrator.php";
+    $url["pf_wb"]="./portfolio_website.php";
+    $url["pf_pr"]="./portfolio_product.php";
+    $url["msgboard"]="./messageboard.php";
+    $url["online_service"]="./online_service.php";
+    $url["clock"]="./clock.php";
+    $url["course"]="./class_course.php";
     $url["out"]="./inc/logout.php";
 
 //==========後台連結=====================================
@@ -25,7 +32,13 @@
     $url["acc_up"]="./admin/admin_acc_up.php";
     $url["acc_del"]="./admin/admin_acc_del.php";
     $url["gbuy"]="./admin/admin_gbuy.php";
+    $url["gbuy_buyer"]="./admin/admin_gbuy_buyer.php";
     $url["gbmodify"]="./admin/admin_gb_modify.php";
+    $url["olsv_list"]="./admin/admin_online_service_list.php";
+    $url["olsv_re"]="./admin/admin_online_service_reply.php";
+    $url["molsv_list"]="./admin/admin_member_online_service_list.php";
+    $url["molsv_re"]="./admin/admin_member_online_service_reply.php";
+    $url["clm"]="./admin/admin_class_course.php";
 
 //==========判斷連結=====================================
     $gogo = "./welcome.php";
