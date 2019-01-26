@@ -23,6 +23,8 @@
     $url["clock"]="./clock.php";
     $url["course"]="./class_course.php";
     $url["out"]="./inc/logout.php";
+    $url["testbg"]="./testbg.php";
+    $url["test"]="./test.php";
 
 //==========後台連結=====================================
     $url["admin"]="./admin/admin_login.php";

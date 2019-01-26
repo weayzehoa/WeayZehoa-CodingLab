@@ -4,7 +4,6 @@
     include_once("./inc/url.php");
     include_once("./inc/head.php");
 
-
     // ===========選單切換==================
 
     //預設使用前台選單
@@ -22,16 +21,16 @@
         }    
     }
 
-
     include_once($menu);
     include_once($gogo);
 
-
 ?>
 
-    <?php
+    <div id="particles-js"></div>
+    
+<?php
     include_once("./inc/foot.php");
-    include_once("./inc/js.php");
+    include_once("./inc/js.php"); 
 ?>
-  </body>
+</body>
 </html>

@@ -19,13 +19,11 @@ if (!empty($_SESSION["id"])) {
 <!-- <body class="bg-info"> -->
 <!-- <body style="background-color: rgba(0, 255, 255, 0.7)"> -->
 <!-- <body style="background-image: url(img/bg.jpg)"> -->
-
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(img/bg.jpg);">
+<!-- <body style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(img/bg.jpg);"> -->
 
 <nav class="navbar navbar-expand-xl navbar-dark bg-black border-bottom fixed-top">
-    <a class=" offset-1 col-2 navbar-brand" href="index.php">
-        <img src="img/logo.png">
-    </a>
+    <!-- <a class=" offset-1 col-2 navbar-brand" href="index.php"><img src="img/logo2.png"></a> -->
+    <a style="font-size:0.95em" class="col-1 offset-1 navbar-brand font-weight-bold" href="index.php">WeayZehoa<br>Coding Lab</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menunavbar" aria-controls="menunavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

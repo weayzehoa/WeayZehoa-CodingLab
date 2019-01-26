@@ -88,8 +88,8 @@ img:hover{
 </div>	
 
 <script>
-    function imgshow(x){
-        $('#modalimg').modal('show');
-        $('#modal_imgshow').html('<img width="100%" src="./img/resume/photoshop/p'+x+'.jpg">');
-    }
+function imgshow(x){
+    $('#modalimg').modal('show');
+    $('#modal_imgshow').html('<img width="100%" src="./img/resume/photoshop/p'+x+'.jpg">');
+}
 </script>

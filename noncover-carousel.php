@@ -131,15 +131,15 @@
                     4. 這頁面加上下方圖片選單, 按了圖片顯示區會從左邊滑入.
                     </p>
                 <div class="row">
-                    <div id="l_btn" class="col-1 bg-primary rounded">按這區域可以更換下一張圖案</div>
+                    <div id="l_btn" class="col-1 bg-primary text-white rounded">按這區域可以更換下一張圖案</div>
                     <div id="showpic" class="col-10 ">
                         <div id="p1"></div>
                         <div id="p2"></div>
                     </div>
-                    <div id="r_btn" class="col-1 bg-primary rounded">按這區域可以更換上一張圖案</div>
+                    <div id="r_btn" class="col-1 bg-primary text-white rounded">按這區域可以更換上一張圖案</div>
                 </div>
                 <br>
-                <div id="mmenu"  class="col-10 offset-1 align-self-center">
+                <div id="mmenu"  class="col-10 offset-1 text-white align-self-center">
                         <div id="mmenu_btn"></div>
                     </div>
                     <div id="btmenu" class="col-10 offset-1">

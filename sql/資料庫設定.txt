@@ -7,9 +7,9 @@ player 資料表
 	p_name		名字		TEXT
 	p_nick		暱稱		TEXT
 	p_sex		性別		INT(1)		對應 player_sex 索引
-	p_email		電子郵件	TEXT
-	p_permit	權限		INT(1)		對應 player_permission 索引
-	p_ctime		建立時間	DATETIME
+	p_email		電子郵件		TEXT
+	p_permit		權限		INT(1)		對應 player_permission 索引
+	p_ctime		建立時間		DATETIME
 	p_del		刪除		INT(1)
 
 player_sex 資料表
@@ -24,43 +24,76 @@ gbuy 資料表
 	g_seq		索引		INT
 	g_p_id		建立者		INT		對應 player 索引
 	g_name		名稱		TEXT
-	g_pname		產品名稱	TEXT
-	g_pic		圖片名稱	TEXT
+	g_pname		產品名稱		TEXT
+	g_pic		圖片名稱		TEXT
 	g_con		說明		TEXT
-	g_oprice	原價		INT
-	g_gprice	團購價		INT
-	g_sprice	特惠價		INT
+	g_oprice		原價		INT
+	g_gprice		團購價		INT
+	g_sprice		特惠價		INT
 	g_onum		限量		INT
-	g_rnum		剩餘數量	INT
-	g_stime		開始時間	DATE
+	g_rnum		剩餘數量		INT
+	g_stime		開始時間		DATE
 	g_endtime	結束時間	DATE
 	g_close		結束否		INT(1)
 	g_del		刪除否		INT(1)
 
 gbuy_buyer 資料表
 	g_b_seq		索引		INT
-	g_b_pno		團購編號	INT		對應 gbuy 索引
+	g_b_pno		團購編號		INT		對應 gbuy 索引
 	g_b_buyer	購買者編號	INT		對應 player 索引
-	g_b_num		購買數量	INT
-	g_b_price	購買單價	INT		由php計算參與人數變換
-	g_b_total	購買總計	INT
-	g_b_time	參加團購時間	datetime
-	g_b_del		取消參加團購標記INT(1)
+	g_b_num		購買數量		INT
+	g_b_price		購買單價		INT		由php計算參與人數變換
+	g_b_total		購買總計		INT
+	g_b_time		參加團購時間	datetime
+	g_b_del		取消參加團購標記	INT(1)
 
 msgboard 資料表
-	m_seq		索引
-	m_name		留言者
-	m_email		留言者email
-	m_title		標題
-	m_con		內容
-	m_time		留言時間
-	m_del		刪除否
+	m_seq		索引		INT
+	m_name		留言者		TEXT
+	m_email		留言者email	TEXT
+	m_title		標題		TEXT
+	m_con		內容		TEXT
+	m_time		留言時間		DATETIME
+	m_del		刪除否		INT(1)
 
 msgboard_reply 資料表
-	m_r_seq		索引
-	m_r_no		留言編號
-	m_r_name	回覆者名字
-	m_r_email	回覆者email
-	m_r_con		回覆內容
-	m_r_time	回覆時間
-	m_r_del		刪除否
+	m_r_seq		索引		INT
+	m_r_no		留言編號		INT		對應 msgboard 索引
+	m_r_name	回覆者名字	TEXT
+	m_r_email	回覆者email	TEXT
+	m_r_con		回覆內容		TEXT
+	m_r_time		回覆時間		DATETIME
+	m_r_del		刪除否		INT(1)
+
+service 資料表
+	s_seq		索引		INT
+	s_no		案件編號		TEXT
+	s_time		最後回覆時間	DATETIME	對應 player p_name
+	s_id		最後回覆者	TEXT
+
+service_log 資料表
+	s_l_seq		索引		INT
+	s_l_no		案件編號		TEXT
+	s_l_to		發問或回覆索引	TEXT		對應 player p_name
+	s_l_con		問答內容		TEXT
+	s_l_time		問答時間		DATETIME
+
+class 資料表
+	c_seq		索引		INT
+	c_date		日期		DATE
+	c_week		星期 		INT(1)		對應 class_week 索引
+	c_name		課程名稱 		INT(1)		對應 class_name 索引
+	c_teacher		老師名字		INT(1)		對應 class_teacher 索引
+	c_num		節數
+
+class_week 資料表
+	c_w_seq		索引		INT
+	c_w_n		星期		TEXT
+
+class_name 資料表
+	c_n_seq		索引		INT
+	c_n_mane	課程名稱		TEXT
+
+class_teacher 資料表
+	c_t_seq		索引		INT
+	c_t_name		老師名字		TEXT

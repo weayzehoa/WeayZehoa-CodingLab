@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2019 年 01 月 14 日 17:22
+-- 產生時間： 2019 年 01 月 26 日 12:46
 -- 伺服器版本: 10.1.36-MariaDB
 -- PHP 版本： 7.2.10
 
@@ -99,7 +99,7 @@ INSERT INTO `class` (`c_seq`, `c_date`, `c_week`, `c_name`, `c_teacher`, `c_num`
 (55, '2018-11-27', 2, 9, 1, 2),
 (56, '2018-11-27', 2, 6, 1, 1),
 (57, '2018-11-27', 2, 3, 1, 4),
-(58, '2018-11-28', 3, 2, 2, 4),
+(58, '2018-11-28', 3, 2, 2, 8),
 (59, '2018-11-29', 4, 1, 3, 8),
 (60, '2018-11-30', 5, 4, 5, 8),
 (61, '2018-12-03', 1, 2, 2, 8),
@@ -135,10 +135,10 @@ INSERT INTO `class` (`c_seq`, `c_date`, `c_week`, `c_name`, `c_teacher`, `c_num`
 (91, '2019-01-16', 3, 5, 2, 8),
 (92, '2019-01-17', 4, 3, 1, 8),
 (93, '2019-01-18', 5, 4, 5, 8),
-(94, '2019-01-21', 1, 5, 2, 8),
+(94, '2019-01-21', 1, 3, 1, 8),
 (95, '2019-01-22', 2, 3, 1, 8),
 (96, '2019-01-23', 3, 5, 2, 8),
-(97, '2019-01-24', 4, 3, 1, 8),
+(97, '2019-01-24', 4, 5, 2, 8),
 (98, '2019-01-25', 5, 4, 5, 8),
 (99, '2019-01-28', 1, 4, 2, 8),
 (100, '2019-01-29', 2, 8, 1, 1),
@@ -208,17 +208,11 @@ INSERT INTO `class_name` (`c_n_seq`, `c_n_name`) VALUES
 (6, '數位媒體應用'),
 (7, '資訊網路概論'),
 (8, '班會'),
-(9, '聯課'),
 (10, '就業分析求職技巧'),
 (11, '報到'),
-(12, '生活津貼'),
-(13, '職訓資源'),
 (14, '學員輔導'),
-(15, '導師時間'),
-(16, '職涯規劃'),
 (17, '結訓'),
-(18, '乙級學科考試'),
-(20, '找工作');
+(18, '乙級學科考試');
 
 -- --------------------------------------------------------
 
@@ -241,8 +235,7 @@ INSERT INTO `class_teacher` (`c_t_seq`, `c_t_name`) VALUES
 (3, '洪梅君'),
 (4, '鄭宇翔'),
 (5, '林金露'),
-(6, '楊健裕'),
-(8, 'Roger');
+(6, '楊健裕');
 
 -- --------------------------------------------------------
 
@@ -298,7 +291,7 @@ CREATE TABLE `gbuy` (
 
 INSERT INTO `gbuy` (`g_seq`, `g_p_id`, `g_name`, `g_pname`, `g_pic`, `g_con`, `g_oprice`, `g_gprice`, `g_sprice`, `g_onum`, `g_rnum`, `g_stime`, `g_endtime`, `g_close`, `g_del`) VALUES
 (1, 1, 'INTEL 大放送', '256G SSD硬碟', 'gbuy20190102220702.jpg', 'INTEL 大放送 256G SSD硬碟\nINTEL 大放送 256G SSD硬碟\nINTEL 大放送 256G SSD硬碟\"\"\"\"\"', 1500, 1300, 1000, 30, 19, '2018-12-17', '2019-01-18', 1, 0),
-(2, 1, 'MacBook大團購', 'MacBookAir', 'gbuy20181229212321.jpg', 'Apple MacBook Air 大團購\n頂級規格, 高級享受\"\"', 60000, 58000, 55000, 20, 13, '2018-12-12', '2018-12-20', 1, 0),
+(2, 1, 'MacBook大團購', 'MacBookAir', 'gbuy20181229212321.jpg', 'Apple MacBook Air 大團購\n頂級規格, 高級享受\"\"', 60000, 58000, 55000, 20, 11, '2018-12-12', '2018-12-20', 1, 0),
 (3, 1, '團購零食No.1', '黑師傅捲心酥', 'gbuy20181229212553.jpg', '黑師傅巧克力捲心酥, 酥酥脆脆.\n黑師傅巧克力捲心酥, 酥酥脆脆.\n黑師傅巧克力捲心酥, 酥酥脆脆.\"\"123', 350, 300, 250, 30, 4, '2018-12-10', '2019-01-17', 1, 0),
 (4, 1, '1dwsfds', 'BBB', 'gbuy20181229213727.jpg', 'asddasdasd1312ds\nadasdqwdwqddsadwew\nddwfewfewfewf\"1232133', 12323, 22353, 1123, 15, 15, '2018-12-12', '2018-12-12', 2, 0),
 (5, 1, 'sddasdas', 'asdadw', 'gbuy20181230151204.jpg', 'dsadasdadasd\nsadasdasdas\ndasdadasdsdd\"', 32321, 32321, 23333, 12, 10, '2018-12-12', '2018-12-11', 1, 0),
@@ -356,7 +349,8 @@ INSERT INTO `gbuy_buyer` (`g_b_seq`, `g_b_pno`, `g_b_buyer`, `g_b_num`, `g_b_pri
 (26, 1, 1, 2, 1000, 2000, '2019-01-01 02:27:11', 1),
 (27, 7, 16, 1, 2800, 2800, '2019-01-01 20:04:54', 0),
 (28, 8, 16, 1, 1800, 1800, '2019-01-03 19:18:37', 0),
-(29, 5, 16, 2, 32321, 64642, '2019-01-03 19:22:25', 0);
+(29, 5, 16, 2, 32321, 64642, '2019-01-03 19:22:25', 0),
+(30, 2, 16, 2, 55000, 110000, '2019-01-26 15:26:27', 0);
 
 -- --------------------------------------------------------
 
@@ -382,7 +376,8 @@ INSERT INTO `msgboard` (`m_seq`, `m_name`, `m_email`, `m_title`, `m_con`, `m_tim
 (1, 'Roger Wu', 'weayzehoa@gmail.com', '第一筆測試', '第一筆測試\r\n第一筆測試\r\n第一筆測試\r\n第一筆測試', '2019-01-08 22:49:19', 0),
 (2, 'Roger Wu', 'weayzehoa@gmail.com', '第二筆留言', '第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言第二筆留言', '2019-01-08 22:52:14', 0),
 (3, 'Roger Wu', 'weayzehoa@gmail.com', '第三筆留言', '第三筆留言第三筆留言第三筆留言第三筆留言第三筆留言\r\n第三筆留言第三筆留言第三筆留言第三筆留言第三筆留言\r\n第三筆留言第三筆留言第三筆留言第三筆留言第三筆留言\r\n第三筆留言第三筆留言第三筆留言第三筆留言第三筆留言', '2019-01-08 22:54:10', 0),
-(4, 'Roger Wu', 'weayzehoa@gmail.com', '測試勾選同意確認按鈕', '測試勾選同意確認按鈕測試勾選同意確認按鈕\r\n測試勾選同意確認按鈕測試勾選同意確認按鈕\r\n測試勾選同意確認按鈕測試勾選同意確認按鈕', '2019-01-10 19:51:34', 0);
+(4, 'Roger Wu', 'weayzehoa@gmail.com', '測試勾選同意確認按鈕', '測試勾選同意確認按鈕測試勾選同意確認按鈕\r\n測試勾選同意確認按鈕測試勾選同意確認按鈕\r\n測試勾選同意確認按鈕測試勾選同意確認按鈕', '2019-01-10 19:51:34', 0),
+(5, 'AAA CCCC', 'unknow@ace', 'test', '回復訊息會重複送', '2019-01-26 14:53:34', 0);
 
 -- --------------------------------------------------------
 
@@ -409,7 +404,17 @@ INSERT INTO `msgboard_reply` (`m_r_seq`, `m_r_no`, `m_r_name`, `m_r_email`, `m_r
 (2, 2, '管理者', 'admin@localhost', '測試回覆第二筆資料', '2019-01-09 00:33:34', 0),
 (3, 3, '管理者', 'admin@admin', '測試勾選同意function', '2019-01-10 19:43:03', 0),
 (4, 4, 'admin', 'admin@admin', '測試勾選同意function', '2019-01-10 19:52:22', 0),
-(5, 4, 'test', 'test@test', 'test', '2019-01-12 15:14:21', 0);
+(5, 4, 'test', 'test@test', 'test', '2019-01-12 15:14:21', 0),
+(6, 4, '阿富', 'test@test', 'test', '2019-01-21 08:51:42', 0),
+(7, 4, 'admin', 'admin@admin', 'test', '2019-01-26 14:37:27', 0),
+(8, 3, 'admin', 'admin@admin', 'test', '2019-01-26 14:37:27', 0),
+(9, 3, 'Roger', 'roger@ace', 'Roger Test', '2019-01-26 14:52:45', 0),
+(10, 1, 'Roger', 'roger@ace', 'Roger Test', '2019-01-26 14:52:45', 0),
+(11, 2, 'Roger', 'roger@ace', 'Roger Test', '2019-01-26 14:52:45', 0),
+(12, 5, 'Roger', 'roger@ace', '測試', '2019-01-26 14:54:01', 0),
+(13, 5, 'Roger Wu', '123@123', '再一次試試', '2019-01-26 14:54:33', 0),
+(20, 5, 'admin', 'test@admin', '測試', '2019-01-26 15:15:58', 0),
+(21, 3, 'admin', 'test@admin', '測試', '2019-01-26 15:15:58', 0);
 
 -- --------------------------------------------------------
 
@@ -439,11 +444,11 @@ INSERT INTO `player` (`p_seq`, `p_id`, `p_pw`, `p_name`, `p_nick`, `p_sex`, `p_e
 (2, 'guest', '084e0343a0486ff05530df6c705c8bb4', '不告訴你', '訪客', 3, 'unknow', 2, '2018-12-16 10:33:28', 0),
 (4, 'tim', 'affb0767ff6d2c38ed839809b9461dd3', '吳小恩', 'Tim Wu', 1, '不能說的秘密', 3, '2018-12-16 14:41:43', 0),
 (5, 'vivian', '8711f5afb3f495b129973f135d803df7', '廖小智', '嘟嘟', 2, '不告訴你', 3, '2018-12-16 14:42:50', 0),
-(6, 'AAA', '47bce5c74f589f4867dbd57e9ca9f808', 'AAA', 'aaa', 3, 'unknow', 3, '2018-12-16 17:36:28', 0),
-(12, 'test', '098f6bcd4621d373cade4e832627b4f6', 'test', 'test', 1, 'test', 2, '2018-12-23 20:42:34', 0),
+(6, 'AAA', '47bce5c74f589f4867dbd57e9ca9f808', 'AAA吳', 'aaa', 3, 'unknow', 3, '2018-12-16 17:36:28', 0),
+(12, 'test', '098f6bcd4621d373cade4e832627b4f6', 'te吳st', 'test', 1, 'test', 2, '2018-12-23 20:42:34', 0),
 (13, 'BBB', '08f8e0260c64418510cefb2b06eee5cd', 'BBB', 'BBB', 1, 'bbb@bbb', 3, '2018-12-30 23:41:42', 1),
-(14, 'CCC', '9df62e693988eb4e1e1444ece0578579', 'CCC', 'CCC', 3, 'ccc@ccc', 3, '2018-12-30 23:42:00', 0),
-(15, 'DDD', '77963b7a931377ad4ab5ad6a9cd718aa', 'DDD', 'DDD', 3, 'ddd@ddd', 3, '2018-12-30 23:42:15', 0),
+(14, 'CCC', '9df62e693988eb4e1e1444ece0578579', 'CC吳C', 'CCC', 3, 'ccc@ccc', 3, '2018-12-30 23:42:00', 0),
+(15, 'DDD', '77963b7a931377ad4ab5ad6a9cd718aa', 'D吳DD', 'DDD', 3, 'ddd@ddd', 3, '2018-12-30 23:42:15', 0),
 (16, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', '管理者', '管理者', 3, 'admin', 1, '2019-01-01 11:51:18', 0);
 
 -- --------------------------------------------------------
@@ -521,7 +526,8 @@ INSERT INTO `service` (`s_seq`, `s_no`, `s_time`, `s_id`) VALUES
 (41, '201901121358336889923', '0000-00-00 00:00:00', '0'),
 (42, '201901121400046124756', '2019-01-12 15:44:08', 'guest'),
 (43, '201901121552296031308', '0000-00-00 00:00:00', '0'),
-(44, '201901131308104970528', '2019-01-13 13:20:11', 'guest');
+(44, '201901131308104970528', '2019-01-13 13:20:11', 'guest'),
+(45, '201901252127558077938', '2019-01-26 16:48:35', '0');
 
 -- --------------------------------------------------------
 
@@ -567,7 +573,12 @@ INSERT INTO `service_log` (`s_l_seq`, `s_l_no`, `s_l_to`, `s_l_con`, `s_l_time`)
 (112, '201901121400046124756', '0', 'ols_test<br />\nols_test<br />\nols_test', '2019-01-12 15:43:54'),
 (113, '201901121400046124756', 'guest', 'TESTETESTSETETESTETESTSETE<br />\nTESTETESTSETE<br />\nTESTETESTSETE<br />\nTESTETESTSETE', '2019-01-12 15:44:08'),
 (114, '201901131308104970528', '0', '123245661231<br />\n21j1kldjadsdas<br />\ndadjsalkdsajkl', '2019-01-13 13:19:24'),
-(115, '201901131308104970528', 'guest', 'dsfdsafsfsdafjklsa;fjksla<br />\nsdafjksdalfj;klsajf;lsdjfl;ksajfklsja;flsdjkalfsdjaf;dsjkalf<br />\ndsfsdjklfj;sdlajfkls;dajfkldsajfklsd;ajfkldsjfl;dsf<br />\ndsafklsda;jflsjfkl;dsjf;lsjdklf;sjda;lfjskl;fhsd;hfjw;hj;wle', '2019-01-13 13:20:11');
+(115, '201901131308104970528', 'guest', 'dsfdsafsfsdafjklsa;fjksla<br />\nsdafjksdalfj;klsajf;lsdjfl;ksajfklsja;flsdjkalfsdjaf;dsjkalf<br />\ndsfsdjklfj;sdlajfkls;dajfkldsajfklsd;ajfkldsjfl;dsf<br />\ndsafklsda;jflsjfkl;dsjf;lsjdklf;sjda;lfjskl;fhsd;hfjw;hj;wle', '2019-01-13 13:20:11'),
+(116, '201901252127558077938', '0', '1232321312321312<br />\nasdkjlajdkladjasd<br />\nadsajkldjaskldjlkajds', '2019-01-26 16:43:04'),
+(117, '201901252127558077938', 'admin', 'assdaksljdkla;sdjlasd<br />\nadjaksldjalksdjklasdas', '2019-01-26 16:43:38'),
+(118, '201901252127558077938', '0', '123333ddaaaa', '2019-01-26 16:46:27'),
+(119, '201901252127558077938', '0', 'asdad<br />\nadlkjalasd<br />\nasdjklad;jsa', '2019-01-26 16:47:45'),
+(120, '201901252127558077938', '0', 'adadasda<br />\ndasdkalsjdklasd<br />\nadaskldjklsa', '2019-01-26 16:48:35');
 
 --
 -- 已匯出資料表的索引
@@ -665,13 +676,13 @@ ALTER TABLE `class`
 -- 使用資料表 AUTO_INCREMENT `class_name`
 --
 ALTER TABLE `class_name`
-  MODIFY `c_n_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `c_n_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- 使用資料表 AUTO_INCREMENT `class_teacher`
 --
 ALTER TABLE `class_teacher`
-  MODIFY `c_t_seq` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `c_t_seq` int(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表 AUTO_INCREMENT `class_week`
@@ -689,19 +700,19 @@ ALTER TABLE `gbuy`
 -- 使用資料表 AUTO_INCREMENT `gbuy_buyer`
 --
 ALTER TABLE `gbuy_buyer`
-  MODIFY `g_b_seq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `g_b_seq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- 使用資料表 AUTO_INCREMENT `msgboard`
 --
 ALTER TABLE `msgboard`
-  MODIFY `m_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引', AUTO_INCREMENT=5;
+  MODIFY `m_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引', AUTO_INCREMENT=6;
 
 --
 -- 使用資料表 AUTO_INCREMENT `msgboard_reply`
 --
 ALTER TABLE `msgboard_reply`
-  MODIFY `m_r_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `m_r_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- 使用資料表 AUTO_INCREMENT `player`
@@ -725,13 +736,13 @@ ALTER TABLE `player_sex`
 -- 使用資料表 AUTO_INCREMENT `service`
 --
 ALTER TABLE `service`
-  MODIFY `s_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `s_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- 使用資料表 AUTO_INCREMENT `service_log`
 --
 ALTER TABLE `service_log`
-  MODIFY `s_l_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引鍵', AUTO_INCREMENT=116;
+  MODIFY `s_l_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '索引鍵', AUTO_INCREMENT=121;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

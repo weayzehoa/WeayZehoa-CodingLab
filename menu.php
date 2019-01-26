@@ -15,24 +15,17 @@
         $member = '<a class="dropdown-item" href="?g=login"><i class="fas fa-sign-in-alt text-dark"></i>&nbsp;登入</a>';
     }
 ?>
-<style>
-
-body{
-    /* margin-top: 65px; make room for the nav bar */
-}
-</style>
 
 <!-- <body class="bg-info"> -->
-<!-- <body style="background-color: rgba(0, 255, 255, 0.7)"> -->
+<!-- <body style="background-color: rgb(0, 0, 0)"> -->
 <!-- <body style="background-image: url(img/bg.jpg);"> -->
-<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(img/bg.jpg);">
+<!-- <body style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(img/bg.jpg);"> -->
 <!-- <body style="background-image: url(img/bg2.jpg); background-size:cover"> -->
-
 
     <!-- <nav style="background-color:transparent;" class="navbar navbar-expand-xl navbar-dark bg-black border-bottom fixed-top"> -->
     <nav class="navbar navbar-expand-xl navbar-dark bg-black border-bottom fixed-top">
-        <a class=" offset-1 col-2 navbar-brand" href="index.php"><img src="img/logo.png"></a>
-        <!-- <a class=" offset-1 navbar-brand" href="#">WeayZehoa Coding Lab.</a> -->
+        <!-- <a class=" offset-1 col-1 navbar-brand" href="index.php"><img src="img/logo2.png"></a> -->
+        <a style="font-size:0.95em" class="col-1 offset-1 navbar-brand font-weight-bold" href="index.php">WeayZehoa<br>Coding Lab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menunavbar" aria-controls="menunavbar"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,21 +33,24 @@ body{
         <div class="collapse navbar-collapse col-8" id="menunavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home text-white"></i>&nbsp;首頁</a>
+                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i>&nbsp;首頁</a>
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?menu=admin&g=admin"><i class="fas fa-tools text-white"></i>&nbsp;後台管理</a>
+                    <a class="nav-link" href="?menu=admin&g=admin"><i class="fas fa-tools"></i>&nbsp;後台管理</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?g=gb"><i class="fas fa-shopping-cart text-white"></i>&nbsp;團購系統</a>
+                    <a class="nav-link" href="?g=gb"><i class="fas fa-shopping-cart"></i>&nbsp;團購系統</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?g=course"><i class="fas fa-calendar-alt"></i>&nbsp;課程查詢系統</a>
                 </li>
 
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-place-of-worship text-white"></i>&nbsp;期末作業</a>
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-place-of-worship"></i>&nbsp;期末作業</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?menu=1&g=acc"><i class="fas fa-address-card text-dark"></i>&nbsp;會員管理系統<span class="text-danger">&nbsp;(後臺)</span></a>
                         <a class="dropdown-item" href="?g=course"><i class="fas fa-calendar-alt text-dark"></i>&nbsp;課程查詢系統</a>
@@ -66,7 +62,7 @@ body{
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code text-white"></i>&nbsp;實驗室</a>
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code"></i>&nbsp;實驗室</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?g=bootstrap-carousel"><i class="fas fa-images text-dark"></i>&nbsp;Bootstrap相片輪播</a>
                         <a class="dropdown-item" href="?g=noncover-carousel"><i class="fas fa-images text-dark"></i>&nbsp;非覆蓋式相片輪播</a>
@@ -79,17 +75,17 @@ body{
                         <a class="dropdown-item" href="?g=online_service"><i class="fas fa-comments text-dark"></i>&nbsp;無登入線上客服</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="?g=clock"><i class="far fa-clock text-dark"></i>&nbsp;時鐘</a>
+                        <a class="dropdown-item" href="?g=testbg"><i class="fas fa-images text-dark"></i></i>&nbsp;背景動畫測試</a>
                     </div>
                 </li>
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="?g=resume"><i class="fas fa-address-book text-white"></i>&nbsp;履歷</a>
-                    <!-- <a class="nav-link" href="?menu=no&g=resume"><i class="fas fa-address-book text-white"></i>&nbsp;履歷</a> -->
+                    <a class="nav-link" href="?g=resume"><i class="fas fa-address-book"></i>&nbsp;履歷</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher text-white"></i>&nbsp;作品</a>
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-chalkboard-teacher"></i>&nbsp;作品</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?g=pf_pr"><i class="fas fa-archive text-dark"></i>&nbsp;產品企劃開發</a>
                         <div class="dropdown-divider"></div>
@@ -102,7 +98,7 @@ body{
             </ul>
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-address-card text-white"></i>&nbsp;會員功能</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-address-card"></i>&nbsp;會員功能</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?= $register ?>
                         <?= $member ?>

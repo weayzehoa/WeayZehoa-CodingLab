@@ -1,5 +1,7 @@
 <?php
     check_permission ();
+    $today = date("Y-m-d",$nt);
+    // $today = "2019-01-29"; 測試用
 ?>
 
 <div class="myheadbg text-white container-fuild text-shadow-bu1 text-center">
@@ -62,7 +64,7 @@
 
                         <?php
 
-                            $cnpage_cnt = 5;
+                            $cnpage_cnt = 7;
                             $cnpage_now = 1;
 
                             $sql = "SELECT * from class_name";
@@ -136,7 +138,27 @@
             </div>
         </div>
 
-        <div class="col-7 ">
+        <div class="col-7">
+            <!-- 顯示今日課程資訊 -->
+            <?php
+                $sqltoday = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_date = '".$today."' and a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq";
+                $rotoday = mysqli_query($link,$sqltoday);
+                $numtoday = mysqli_num_rows($rotoday);
+                $rowtoday = mysqli_fetch_assoc($rotoday);
+            ?>
+                <div class="bg-white text-dark mycol">
+
+            <?php 
+                if($numtoday >= 1){
+                    do { ?>
+                        <div class="col-8">今日　<span class="text-primary"><?=$today?></span>　課程：<span class="text-primary"><?=$rowtoday['c_n_name']?></span>　時數： <span class="text-primary"><?=$rowtoday['c_num']?></span> 小時　　授課老師：<span class="text-primary"><?=$rowtoday['c_t_name']?></span></div>
+            <?php   }while($rowtoday = mysqli_fetch_assoc($rotoday));
+                    }else{ ?>
+                        <div class="col-8">今日　<span class="text-primary"><?=$today?></span>　課程：<span class="text-danger"> 無 </span></div>
+            <?php   } ?>
+
+                </div>
+
             <!-- 課程新增 -->
             <div class="bg-white text-dark mycol text-center">
                 <div>
@@ -199,11 +221,65 @@
                     </table>
                 </div>
             </div>
+
+            <!-- 課程查詢 -->
+            <div class="bg-white text-dark mycol text-center">
+                <span><u><b>課程查詢</b></u></span>
+                <div class="row">
+                    <!-- 以日期查詢 -->
+                    <div class="col-3">
+                        <div class="bg-white text-dark mycol">以日期查詢
+                            <input type="date" name="checkbydate" id="checkbydate">
+                        </div>
+                    </div>
+                    <!-- 以月份查詢 -->
+                    <div class="col-3">
+                        <div class="bg-white text-dark mycol">以月份查詢<br>
+                            <input type="month" name="checkbymonth" id="checkbymonth">
+                        </div>
+                    </div>
+                    <!-- 以課程查詢 -->
+                    <div class="col-3">
+                        <div class="bg-white text-dark mycol">以課程名稱查詢<br>
+                            <select name="checkbyclass" id="checkbyclass">
+                                <option value="0">選擇課程</option>
+                                <?php
+                                    $sql = "SELECT * from class_name";
+                                    $roc = mysqli_query($link,$sql);
+                                    $rowc =mysqli_fetch_assoc($roc);
+                                    do{?>
+                                        <option value="<?=$rowc['c_n_seq'];?>"><?=$rowc['c_n_name'];?></option>
+                                    
+                                <?php }while($rowc =mysqli_fetch_assoc($roc)); ?>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 以老師查詢課表 -->
+                    <div class="col-3">
+                        <div class="bg-white text-dark mycol">以老師名字查詢<br>
+                            <select name="checkbytecher" id="checkbytecher">
+                                <option value="0">選擇老師</option>
+                                <?php
+                                    $sql = "SELECT * from class_teacher";
+                                    $rot = mysqli_query($link,$sql);
+                                    $rowt =mysqli_fetch_assoc($rot);
+                                    do{?>
+                                        <option value="<?=$rowt['c_t_seq'];?>"><?=$rowt['c_t_name'];?></option>
+                                    
+                                <?php }while($rowt =mysqli_fetch_assoc($rot)); ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 課程列表 -->
             <div class="bg-white text-dark mycol text-center">
                 <div>
                     <p><u><b>課程列表</b></u></p>        
-                    <table class="table table-hover">
+                    <table id="tb4" class="table table-hover">
                         <thead>
                             <tr>
                             <th scope="col">日期</th>
@@ -214,21 +290,31 @@
                             <th scope="col">操作</th>
                             </tr>
                         </thead>
-                        <tbody id="tb4">
+                        <tbody>
                         <?php
-
                             $page_cnt = 10;
                             $page_now = 1;
+                            $now_cnt = 0;
 
                             $sql = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq order by a.c_date DESC";
-                            $ro = mysqli_query($link,$sql);
-                            $total = mysqli_num_rows($ro);
-
+                            $ro3 = mysqli_query($link,$sql);
+                            $total = mysqli_num_rows($ro3);
+                            $row3 = mysqli_fetch_assoc($ro3);
+                            
+                            do{
+                                $class['date'][]=$row3['c_date'];
+                            }while($row3 = mysqli_fetch_assoc($ro3));
+                            
+                            for($i=0;$i<$total;$i++){
+                                if($class['date'][$i]==$today){
+                                    $now_cnt = $i; 
+                                    $page_now = ceil($now_cnt / $page_cnt);
+                                }
+                            }
+    
                             $page_total = ceil($total/$page_cnt);
 
-                            if(!empty($_GET["page"])){
-                                $page_now = $_GET["page"];
-                            }
+                            if(!empty($_GET["page"])){ $page_now = $_GET["page"]; }
                         
                             $page_open = ($page_now - 1) * $page_cnt;
                             
@@ -239,30 +325,45 @@
                             if($p2 > $page_total){$p2 = $page_total;}
 
                             $sql = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq order by a.c_date DESC limit ".$page_open." , ".$page_cnt;
-                            $ro = mysqli_query($link,$sql);
-                            $row2 = mysqli_fetch_assoc($ro);
-                            do {
-                        ?>
-                            <tr>
-                            <td><?=$row2['c_date']?></td>
-                            <td><?=$row2['c_w_n']?></td>
-                            <td><?=$row2['c_n_name']?></td>
-                            <td><?=$row2['c_t_name']?></td>
-                            <td><?=$row2['c_num']?></td>
-                            <td>                                
-                                <button class="btn btn-danger" onclick="modclass('<?=$row2['c_seq']?>','<?=$row2['c_date']?>','<?=$row2['c_w_n']?>','<?=$row2['c_n_name']?>','<?=$row2['c_t_name']?>','<?=$row2['c_num']?>')">修改</button>
-                                <button class="btn btn-danger" onclick="delclass('<?=$row2['c_seq']?>')">刪除</button>
-                            </td>
-                            </tr>
-                        <?php
-                            }while($row2 = mysqli_fetch_assoc($ro));
-                        ?>
+                            $ro2 = mysqli_query($link,$sql);
+                            $row2 = mysqli_fetch_assoc($ro2);
 
+                            do {
+                        
+                                if($row2['c_date']== $today){ ?>
+                                    <tr>
+                                    <td class="text-danger"><?=$row2['c_date']?></td>
+                                    <td class="text-danger"><?=$row2['c_w_n']?></td>
+                                    <td class="text-danger"><?=$row2['c_n_name']?></td>
+                                    <td class="text-danger"><?=$row2['c_t_name']?></td>
+                                    <td class="text-danger"><?=$row2['c_num']?></td>
+                                    <td>                                
+                                        <button class="btn btn-danger" onclick="modclass('<?=$row2['c_seq']?>','<?=$row2['c_date']?>','<?=$row2['c_w_n']?>','<?=$row2['c_n_name']?>','<?=$row2['c_t_name']?>','<?=$row2['c_num']?>')">修改</button>
+                                        <button class="btn btn-danger" onclick="delclass('<?=$row2['c_seq']?>')">刪除</button>
+                                    </td>
+                                    </tr>
+
+                        <?php   }else{ ?>
+
+                                    <tr>
+                                        <td><?=$row2['c_date']?></td>
+                                        <td><?=$row2['c_w_n']?></td>
+                                        <td><?=$row2['c_n_name']?></td>
+                                        <td><?=$row2['c_t_name']?></td>
+                                        <td><?=$row2['c_num']?></td>
+                                        <td>                                
+                                            <button class="btn btn-danger" onclick="modclass('<?=$row2['c_seq']?>','<?=$row2['c_date']?>','<?=$row2['c_w_n']?>','<?=$row2['c_n_name']?>','<?=$row2['c_t_name']?>','<?=$row2['c_num']?>')">修改</button>
+                                            <button class="btn btn-danger" onclick="delclass('<?=$row2['c_seq']?>')">刪除</button>
+                                        </td>
+                                    </tr>
+
+                        <?php   }
+                                }while($row2 = mysqli_fetch_assoc($ro2)); ?>
                         </tbody>
                     </table>
 
                     <!-- 課程列表導覽列 -->
-                    <nav aria-label="Page navigation example">
+                    <nav id="nav" aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             <li class="page-item">
                             <a class="page-link" href="?menu=4&g=clm&page=<?=$p1?>">Previous</a>
@@ -291,8 +392,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="modclass_form" role="dialog">
-	<div class="modal-dialog">
+<div class="modal fade wow lightSpeedIn" data-wow-duration="2s" id="modclass_form" role="dialog">
+	<div class="modal-dialog  modal-dialog-centered">
 		<div class=" modal-content">
 			<div class="modal-header">
             <h3 class="modal-title">課程修改</h3>
@@ -319,7 +420,6 @@
 					<label class="col-3 label-on-left" style="padding:15px 5px 0 0;text-align: right;">課程名稱</label>
 					<div class="col-md-9">
 						<div class="form-group label-floating"  style="margin:0px !important">
-                        <!-- <input class='form-control' type='text' name='mod_clname' id='mod_clname'> -->
                         <select class='form-control' name="mod_clname" id="mod_clname"></select>
 						</div>
 					</div>
@@ -328,7 +428,6 @@
 					<label class="col-3 label-on-left" style="padding:15px 5px 0 0;text-align: right;">授課老師</label>
 					<div class="col-md-9">
 						<div class="form-group label-floating"  style="margin:0px !important">
-                        <!-- <input class='form-control' type='text' name='mod_clteacher' id='mod_clteacher'> -->
                         <select class='form-control' name="mod_clteacher" id="mod_clteacher"></select>
 						</div>
 					</div>
@@ -337,7 +436,6 @@
 					<label class="col-3 label-on-left" style="padding:15px 5px 0 0;text-align: right;">節數</label>
 					<div class="col-md-9">
 						<div class="form-group label-floating"  style="margin:0px !important">
-                        <!-- <input class='form-control' type='text' name='mod_clnum' id='mod_clnum'> -->
                         <select class='form-control' name="mod_clnum" id="mod_clnum"></select>
 						</div>
 					</div>
@@ -360,338 +458,7 @@
 
 <script>
 
-var myid = '<?=$_SESSION['id']?>';
-var mypermit = '<?=$_SESSION['permit']?>';
+var myid = "<?=$_SESSION['id']?>";
+var mypermit = "<?=$_SESSION['permit']?>";
 
-// 新增老師名字
-$('#newteacher').click(function(){
-    if(myid=="guest" || mypermit != 1){
-    Swal({
-        title: '警告',
-        text: '訪客/非管理員無法新增',
-        type: 'warning',
-        confirmButtonText: '確認',
-        });
-    }else{
-        var newteacher = $('input[name=newteacher]').val();
-        if(newteacher){
-            $.post('./api/admin_class_api.php',{newteacher,myid,mypermit},function(back){
-                var jd = JSON.parse(back);
-                $('input[name=newteacher]').val('');
-                $('tbody#tb1').append('<tr><td>'+jd.c_t_seq+'</td><td>'+jd.c_t_name+'</td><td><button class="btn btn-danger" onclick="modteacher('+jd.c_t_seq+','+jd.c_t_name+')">修改</button><button class="btn btn-danger" onclick="delclassname('+jd.c_t_seq+','+jd.c_t_name+')">刪除</button></td></tr>');
-                $('select[name=newclteacher]').append('<option value="'+jd.c_t_seq+'">'+jd.c_t_name+'</option>');
-            });
-        }else{
-            swal({
-			  title: '錯誤',
-			  text: '欄位不能為空,請輸入老師名字',
-			  type: 'error',
-			  confirmButtonClass: "btn btn-info",
-			  buttonsStyling: false
-			})
-        }
-    }
-});
-
-// 修改老師名字
-function modteacher(tseq,oldtname){
-    if(myid=="guest" || mypermit != 1){
-    Swal({
-        title: '警告',
-        text: '訪客/非管理員無法修改老師名字',
-        type: 'warning',
-        confirmButtonText: '確認',
-        });
-    }else{
-        if(modtname = prompt('請輸入要修改的名字',oldtname)){
-        if(modtname == oldtname){
-            alert('你輸入的名字未改變');
-        }
-        else{
-            $.post("./api/admin_class_api.php",{tseq,modtname,myid,mypermit},function(xx){
-            alert(xx);
-            });
-            window.location.reload();
-        }
-        }else{
-            alert('取消修改');
-        }
-    }
-}
-
-// 刪除老師名字
-function delteacher(deltseq,oldtname){
-    if(myid=="guest" || mypermit != 1){
-        Swal({
-            title: '警告',
-            text: '訪客/非管理員無法刪除老師名字',
-            type: 'warning',
-            confirmButtonText: '確認',
-            });
-    }else{
-        if(confirm('注意!!刪除老師名字將會一併刪除已存在的課程!!')){
-            $.post("./api/admin_class_api.php",{deltseq,myid,mypermit},function(xx){
-            alert(xx);
-            });
-            window.location.reload();
-        }else{
-            alert('取消刪除');
-        }
-    }
-}
-
-// 日期改變則顯示星期
-$('input[name=newdate]').change(function(){
-    var dayname = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-    newdate = $('input[name=newdate]').val();
-    weekName = dayname[new Date(newdate).getDay()];
-    $('input[name=weekname]').val(weekName);
-});
-
-// 新增課程名稱
-$('#newclname').click(function(){
-    if(myid=="guest" || mypermit != 1){
-    Swal({
-        title: '警告',
-        text: '訪客/非管理員無法新增',
-        type: 'warning',
-        confirmButtonText: '確認',
-        });
-    }else{
-        var newclname = $('input[name=newclname]').val();
-        if(newclname){
-            $.post('./api/admin_class_api.php',{newclname,myid,mypermit},function(back){
-                var jd = JSON.parse(back);
-                $('input[name=newclname]').val('');
-                $('tbody#tb2').append('<tr><td>'+jd.c_n_seq+'</td><td>'+jd.c_n_name+'</td><td><button class="btn btn-danger" onclick="modclassname('+jd.c_n_seq+','+jd.c_n_name+')">修改</button><button class="btn btn-danger" onclick="delclassname('+jd.c_n_seq+')">刪除</button></td></tr>');
-                $('select[name=newclname]').append('<option value="'+jd.c_n_seq+'">'+jd.c_n_name+'</option>');
-            });
-        }else{
-            swal({
-			  title: '錯誤',
-			  text: '欄位不能為空,請輸入課程名稱',
-			  type: 'error',
-			  confirmButtonClass: "btn btn-info",
-			  buttonsStyling: false
-			})
-        }
-    }
-});
-
-// 修改課程名稱
-function modclassname(cseq,oldclname){
-    if(myid=="guest" || mypermit != 1){
-    Swal({
-        title: '警告',
-        text: '訪客/非管理員無法修改課程名稱',
-        type: 'warning',
-        confirmButtonText: '確認',
-        });
-    }else{
-        if(modclname = prompt('請輸入要修改的課程名稱',oldclname)){
-        if(modclname == oldclname){
-            alert('你輸入的課程名稱未改變');
-        }
-        else{
-            $.post("./api/admin_class_api.php",{cseq,modclname,myid,mypermit},function(xx){
-            alert(xx);
-            });
-            window.location.reload();
-        }
-        }else{
-            alert('取消修改');
-        }
-    }
-}
-
-// 刪除課程名稱
-function delclassname(delcseq,oldclname){
-    if(myid=="guest" || mypermit != 1){
-        Swal({
-            title: '警告',
-            text: '訪客/非管理員無法刪除課程名稱',
-            type: 'warning',
-            confirmButtonText: '確認',
-            });
-    }else{
-        if(confirm('注意!!刪除課程名稱將會一併刪除已存在的課程!!')){
-            $.post("./api/admin_class_api.php",{delcseq,myid,mypermit},function(xx){
-            alert(xx);
-            });
-            window.location.reload();
-        }else{
-            alert('取消刪除');
-        }
-    }
-}
-
-// 新增課程
-$('#newclass').click(function(){
-    if(myid=="guest" || mypermit != 1){
-        Swal({
-            title: '警告',
-            text: '訪客/非管理員無法新增',
-            type: 'warning',
-            confirmButtonText: '確認',
-            });
-        }else{
-            clweek = new Date($('input[name=newdate]').val()).getDay();
-            cldate = $('input[name=newdate]').val();
-            clname = $('select[name=newclname]').val();
-            clteacher = $('select[name=newclteacher]').val();
-            clnum = $('select[name=newclnum]').val();
-            if(clweek && cldate){
-                $.post('./api/admin_class_api.php',{clnum,clteacher,clname,cldate,clweek,myid,mypermit},function(back){
-                    var jd = JSON.parse(back);
-                        $("#tb4").prepend('<tr><td>'+jd.c_date+'</td><td>'+jd.c_w_n+'</td><td>'+jd.c_n_name+'</td><td>'+jd.c_t_name+'</td><td>'+jd.c_num+'</td><td><button class="btn btn-danger" onclick="modclass('+jd.c_seq+','+jd.c_date+','+jd.c_w_n+','+jd.c_n_name+','+jd.c_t_name+','+jd.c_num+')">修改</button><button class="btn btn-danger" onclick="delclass('+jd.c_seq+')">刪除</button></td></tr>');
-                        swal({
-                            title: '成功',
-                            text: '新增成功',
-                            type: 'success',
-                            confirmButtonClass: "btn btn-info",
-                            buttonsStyling: false
-                        });
-                    });
-            }else{
-                swal({
-                title: '錯誤',
-                text: '日期欄位不能為空,請輸入日期',
-                type: 'error',
-                confirmButtonClass: "btn btn-info",
-                buttonsStyling: false
-                });
-            }
-        }
-});
-
-// 刪除課程
-function delclass(delclseq){
-    if(myid=="guest" || mypermit != 1){
-        Swal({
-            title: '警告',
-            text: '訪客/非管理員無法刪除課程名稱',
-            type: 'warning',
-            confirmButtonText: '確認',
-            });
-    }else{
-        if(confirm('確定要刪除該筆課程??')){
-            $.post("./api/admin_class_api.php",{delclseq,myid,mypermit},function(xx){
-            alert(xx);
-            });
-            window.location.reload();
-        }else{
-            alert('取消刪除');
-        }
-    }
-}
-
-// 修改課程
-function modclass(mod_cseq,cld,clw,cln,cltn,cn){
-    if(myid=="guest" || mypermit != 1){
-        Swal({
-            title: '警告',
-            text: '訪客/非管理員無法刪除課程名稱',
-            type: 'warning',
-            confirmButtonText: '確認',
-            });
-    }else{
-        $('#mod_cancel').click(function(){
-            Swal({
-            title: '訊息',
-            text: '取消修改',
-            type: 'info',
-            confirmButtonText: '確認',
-            });
-            $('#modclass_form').modal('hide');
-        });
-
-        $('input[name=mod_cldate]').change(function(){
-        var dayname = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-        newdate = $('input[name=mod_cldate]').val();
-        weekName = dayname[new Date(newdate).getDay()];
-        $('input[name=mod_clweek]').val(weekName);
-        });
-
-        $('#modclass_form').modal('show');
-        $('#mod_cldate').val(cld);
-        $('#mod_clweek').val(clw);
-
-        $('#mod_clname').html($('select[name=newclname').html());
-        $('#mod_clteacher').html($('select[name=newclteacher').html());
-        $('#mod_clnum').html($('select[name=newclnum').html());
-
-        $("#mod_clname").children().each(function(){
-        if ($(this).text() == cln){
-            //jQuery給法
-            $(this).attr("selected", true); //或是給"selected"也可
-            //javascript給法
-            // this.selected = true; 
-        }});
-
-        $("#mod_clteacher").children().each(function(){
-        if ($(this).text() == cltn){
-            //jQuery給法
-            $(this).attr("selected", true); //或是給"selected"也可
-            //javascript給法
-            // this.selected = true; 
-        }});
-
-        $("#mod_clnum").children().each(function(){
-        if ($(this).text() == cn){
-            //jQuery給法
-            $(this).attr("selected", true); //或是給"selected"也可
-            //javascript給法
-            // this.selected = true; 
-        }});
-
-        $('#mod_send').click(function(){
-            mod_cld = $("#mod_cldate").val();
-            mod_clw = new Date(mod_cld).getDay();
-            mod_cln = $("#mod_clname").val();
-            mod_cln_text = $('select#mod_clname option:selected').text();
-            mod_cltn = $("#mod_clteacher").val();
-            mod_cltn_text = $('select#mod_clteacher option:selected').text();
-            mod_clnum = $("#mod_clnum").val();
-            mod_clnum_text = $('select#mod_clnum option:selected').text();
-
-            if( mod_cld == cld && mod_cln_text == cln && mod_cltn_text == cltn && mod_clnum_text == cn){
-                Swal({
-                    title: '警告',
-                    text: '所有資料未改變, 取消修改.',
-                    type: 'warning',
-                    confirmButtonText: '確認',
-                });
-            }else{
-                $('#modclass_form').modal('hide');
-                $.post('./api/admin_class_api.php',{mod_cseq,mod_cld,mod_clw,mod_cln,mod_cltn,mod_clnum,myid,mypermit},function(back){
-                    Swal({
-                    title: '成功',
-                    text: '課程修改成功.',
-                    type: 'success',
-                    confirmButtonText: '確認',
-                    });
-                });
-            }
-        });
-    }
-}
-
-
-
-// $("#tb4 td button:button").click(function(){
-//     var td = $(this).parent();
-//     td.parents("tbody:first").find("td");
-//     //取得td的父層(tr)
-//     var tr = td.parent();
-//     //取得欄位index，不需解釋為什要加1吧?…
-//     var nthChild = tr.children().index(td) +1;
-//     var Str="";
-//     //迴圈
-//     for(i=0;i<nthChild-1;i++){
-//     Str=Str+" "+tr.children().eq(i).text();
-//     //alert(tr.children().eq(i).text());
-//     }
-    
-//     console.log(Str);
-// });
 </script>

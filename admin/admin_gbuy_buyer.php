@@ -44,7 +44,7 @@ check_permission ();
 <div class="container-fiuld myconbg">
     <div class="row">
         <div class="col-12">
-            <div class="bg-white text-dark mycol vh-90">
+            <div class="bg-white text-dark mycol">
                 <div class="row">
                     <div class="col-12">
                     <p>說明：<br>
@@ -53,72 +53,68 @@ check_permission ();
                         3. 按取消按鈕, 跳出確認視窗, 確認後, 則刪除該筆資料(加註於資料庫中的g_b_del欄位,　實際資料庫並未刪除), 並變更當前欄位.<br>
                     </p>
                         <table class="table table-hover">
-                        <thead class="thead-dark">
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">帳號ID</th>
-                            <th scope="col">會員名字</th>
-                            <th scope="col">會員暱稱</th>
-                            <th scope="col">會員權限</th>
-                            <th scope="col">E-Mail</th>
-                            <th scope="col">團購名稱</th>
-                            <th scope="col">產品名稱</th>
-                            <th scope="col">團購價</th>
-                            <th scope="col">特別價</th>
-                            <th scope="col">參加時間</th>
-                            <th scope="col" class="text-center">購買數量</th>
-                            <th scope="col" class="text-right">購買單價</th>
-                            <th scope="col" class="text-right">小計</th>
-                            <th scope="col" class="text-center">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php do{ ?>
-                            <tr>
-                            <th scope="row"><?php  echo $no; $no++ ;?></th>
-                            <td><?=$row2['p_id']?></td>
-                            <td><?=$row2['p_name']?></td>
-                            <td><?=$row2['p_nick']?></td>
-                            <td><?=$row2['p_permit']?></td>
-                            <td><?=$row2['p_email']?></td>
-                            <td><?=$row2['g_name']?></td>
-                            <td><?=$row2['g_pname']?></td>
-                            <td><?=$row2['g_gprice']?></td>
-                            <td><?=$row2['g_sprice']?></td>
-                            <td><?=$row2['g_b_time']?></td>
-                            <td class="text-center"><?=$row2['g_b_num']?></td>
-                            <td class="text-right"><?=$row2['g_b_price']?></td>
-                            <td class="text-right"><?=$row2['g_b_total']?></td>
-                            <td>
-                            <div class="row">
-                            <button onclick="admin_gb_change('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>','<?=$row2['g_b_num']?>')" type="button" class="col-6 form-control bg-primary text-warning btn-sm">改數量</button>
-                            <button onclick="admin_order_cancel('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>')" type="button" class="col-6 form-control bg-primary text-warning btn-sm">取消</button>
-                            </div>
-                            </td>
-                            </tr>
-                            <?php }while($row2 = mysqli_fetch_assoc($ro2)); ?>
-                        </tbody>
+                            <thead class="thead-dark">
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">帳號ID</th>
+                                <th scope="col">會員名字</th>
+                                <th scope="col">會員暱稱</th>
+                                <th scope="col">會員權限</th>
+                                <th scope="col">E-Mail</th>
+                                <th scope="col">團購名稱</th>
+                                <th scope="col">產品名稱</th>
+                                <th scope="col">團購價</th>
+                                <th scope="col">特別價</th>
+                                <th scope="col">參加時間</th>
+                                <th scope="col" class="text-center">購買數量</th>
+                                <th scope="col" class="text-right">購買單價</th>
+                                <th scope="col" class="text-right">小計</th>
+                                <th scope="col" class="text-center">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php do{ ?>
+                                <tr>
+                                <th scope="row"><?php  echo $no; $no++ ;?></th>
+                                <td><?=$row2['p_id']?></td>
+                                <td><?=$row2['p_name']?></td>
+                                <td><?=$row2['p_nick']?></td>
+                                <td><?=$row2['p_permit']?></td>
+                                <td><?=$row2['p_email']?></td>
+                                <td><?=$row2['g_name']?></td>
+                                <td><?=$row2['g_pname']?></td>
+                                <td><?=$row2['g_gprice']?></td>
+                                <td><?=$row2['g_sprice']?></td>
+                                <td><?=$row2['g_b_time']?></td>
+                                <td class="text-center"><?=$row2['g_b_num']?></td>
+                                <td class="text-right"><?=$row2['g_b_price']?></td>
+                                <td class="text-right"><?=$row2['g_b_total']?></td>
+                                <td>
+                                <div class="row">
+                                <button onclick="admin_gb_change('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>','<?=$row2['g_b_num']?>')" type="button" class="col-6 form-control bg-primary text-warning btn-sm">改數量</button>
+                                <button onclick="admin_order_cancel('<?=$_SESSION['id']?>','<?=$_SESSION['permit']?>','<?=$row2['p_id']?>','<?=$row2['g_seq']?>')" type="button" class="col-6 form-control bg-primary text-warning btn-sm">取消</button>
+                                </div>
+                                </td>
+                                </tr>
+                                <?php }while($row2 = mysqli_fetch_assoc($ro2)); ?>
+                            </tbody>
                         </table>
+                        <div>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page=<?=$p1?>">上一頁</a></li>
+                                <?php for ($i=1;$i<=$page_total;$i++){
+                                        if ($i == $page_now) {
+                                            echo'<li class="page-item"><a class="page-link text-white bg-primary" href="?menu=2&g=gbuy_buyer&page='.$i.'">'.$i.'</a></li>';
+                                        }else{
+                                            echo'<li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page='.$i.'">'.$i.'</a></li>';
+                                        }
+                                    }?>
+                                <li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page=<?=$p2?>">下一頁</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-12 ">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page=<?=$p1?>">上一頁</a></li>
-
-
-                        <?php for ($i=1;$i<=$page_total;$i++){
-                                if ($i == $page_now) {
-                                    echo'<li class="page-item"><a class="page-link text-white bg-primary" href="?menu=2&g=gbuy_buyer&page='.$i.'">'.$i.'</a></li>';
-                                }else{
-                                    echo'<li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page='.$i.'">'.$i.'</a></li>';
-                                }
-                            }?>
-
-                        <li class="page-item"><a class="page-link" href="?menu=2&g=gbuy_buyer&page=<?=$p2?>">下一頁</a></li>
-                    </ul>
-                </nav>
                 </div>
             </div>
         </div>

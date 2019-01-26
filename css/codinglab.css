@@ -14,6 +14,15 @@ body{
   background-repeat: no-repeat;
 }
 
+#particles-js {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .padding-top{
   padding-top:70px;
 }
@@ -95,7 +104,10 @@ body{
     border-radius: 10px;
     padding:10px; 
   }
-
+  .margin_b10{
+    margin: 0 0 10px 0;
+  }
+  
   .mr5{
     margin: 5px 0;
   }
@@ -126,17 +138,19 @@ body{
 }
 
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+  color: #ff0;
 }
 /* 導覽列上的選單文字顏色 */
 .navbar-dark .navbar-nav .nav-link {
   /* color: rgba(255, 255, 255, 0.5); */
-  color: #007bff;
+  /* color: #007bff; */
+  color: #fff;
 }
 /* 滑鼠移動到導覽列上的選單文字顏色 */
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
   /* color: rgba(255, 255, 255, 0.75); */
-  color: #007bffE0;
+  /* color: #007bffE0; */
+  color: #ff0;
 }
 /* 導覽列上禁用文字顏色 */
 .navbar-dark .navbar-nav .nav-link.disabled {
@@ -148,7 +162,7 @@ body{
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: #ff0;
 }
 
 .navbar-dark .navbar-toggler {
@@ -191,7 +205,7 @@ body{
   color: #16181b;
   text-decoration: none;
   /* background-color: #f8f9fa; */
-  background-color:#66aaeee0;
+  background-color:#dcdee0;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -230,7 +244,11 @@ body{
   .text-white{
     color:#DDD;
   }
-  
+
+  .text-yellow{
+    color:#FF0;
+  }
+
   .bg-white{
     background-color:#DDD;
   }
@@ -497,3 +515,190 @@ body{
         -ms-filter: alpha(opacity=40);
         filter: alpha(opacity=40);
         font-size: 16px; }
+
+/* Online Service 用 */
+#ols_btn{
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+  background-image: url("../img/service_btn.gif");
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 1s;
+  position: fixed;
+  top:50%;
+  left:50%;
+  cursor: pointer;
+}
+
+#ols_btn_talk1{
+  width:80px;
+  height:100px;
+  background-color:#ff9988;
+  font-size:20px;
+  line-height:100px;
+  text-align:center;
+  display:block;
+  cursor: pointer;
+}
+#ols_btn_talk2{
+  width:80px;
+  height:50px;
+  background-color:#92ff88;
+  font-size:20px;
+  line-height:50px;
+  text-align:center;
+  display:block;
+  cursor: pointer;
+}
+#ols_talk_back_hidden{
+  width:550px;
+  height:720px;
+  /* background-color:#bbfcff; */
+  position: fixed;;
+  top:80px;
+  right:0px;
+  overflow: hidden;
+}
+#ols_talk_back{
+  width:550px;
+  height:720px;
+  background-color:#00f;
+  padding:10px;
+  position: relative;;
+  right:-550px;
+  border-radius: 10px;
+}
+#ols_talk_talk{
+  width:530px;
+  height:530px;
+  background-color:#fff;
+}
+#ols_t_case{
+  width:530px;
+  height:30px;
+  background-color:rgb(228, 241, 156);
+  line-height: 30px;
+  
+}
+#ols_t_talk_back{
+  width:530px;
+  height:500px;
+  background-color:#FFF;
+  overflow-y: auto;
+}
+
+#ols_t_talk{
+  background-color:rgba(0,0,0,0.5);
+  padding:5px;
+}
+
+
+#ols_talk_me{
+  width:530px;
+  height:150px;
+  margin:20px auto 0 auto;
+  background-color:#e8ffe2;
+} 
+
+  #ols_service{
+      width:410px;
+      height:620px;
+      background-color: aqua;
+      border: 10px solid crimson;
+      position: fixed;
+      right:-450px;
+      bottom:-650px;
+      transform: rotate(0deg);
+      display:none;
+  }
+
+  #ols_con1{
+      width:400px;
+      height:450px;
+      border:5px solid cornflowerblue;
+  }
+
+  #ols_con2{
+      width:400px;
+      height:150px;
+      border:5px solid cornflowerblue;
+  }
+
+  #ols_close{
+      width:50px;
+      height:30px;
+      float:right;
+      position: relative;
+      background-color: white;
+      font-size:25px;
+      line-height: 25px;
+      text-align: center; 
+  }
+  #ols_close_talk{
+      width:50px;
+      height:30px;
+      float:right;
+      position: relative;
+      background-color: white;
+      font-size:25px;
+      line-height: 25px;
+      text-align: center; 
+  }
+  #ols_t_input,#ols_t_btn{
+      height:150px;
+      width:450px;
+      float: left;
+  }
+  #ols_t_btn{
+      width:50px;
+  }
+  #ols_t_in{
+      min-width:450px;
+      min-height:150px;
+      max-width:450px;
+      max-height:150px;
+      padding:10px;
+      font-size: 20px;
+  }
+  .ols_user,.ols_admin{
+      width:400px;
+      min-height:15px;
+      position: relative;
+  }
+  .ols_user{
+      background-color:rgb(250, 249, 167);
+      left:120px;
+      margin: 5px 0 0 0;
+  }
+  .ols_admin{
+      background-color:rgb(228, 225, 225);
+      margin: 5px 0 0 0;
+  }
+  .ols_usermsg{
+      width:100%;
+      text-align: right;
+      color:#1100ff;
+      word-wrap:break-word;
+  }
+  .ols_usertime{
+      background-color:darkkhaki;
+      text-align: right;
+      color:#FF0011;
+      font-size:12px;
+  }
+  .ols_adminmsg{
+      background-color:rgb(180, 180, 180);
+      width:100%;
+      text-align: left;
+      color:#f00;
+      word-wrap:break-word;
+  }
+  .ols_admintime{
+      background-color:rgb(202, 200, 200);
+      /* text-align: right; */
+      color:#00f;
+      font-size:12px;
+      
+  }

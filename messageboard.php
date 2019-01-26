@@ -18,11 +18,9 @@
 
 ?>
 
-
 <div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
         <h4>練習撰寫簡易留言板功能.　本功能任何人都可以留言或回覆留言, 不檢查是否登入會員.</h4>
 </div>
-
 
 <div class="container col-8 myconbg">
     <div class="row">
@@ -34,7 +32,6 @@
         </div>
     </div>
 </div>
-
 
 <?php 
 
@@ -49,7 +46,7 @@ do{ ?>
                 <div class="row">
                     <div class="col-2">第 <?php echo$i; $i--;?> 篇</div><div class="col-10">主題：<?=$row['m_title']?></div>
                     <div class="col-2">發文者：<?=$row['m_name']?></div><div class="col-3">發文時間：<?=$row['m_time']?></div>
-                    <div  class="col-1 offset-6"><button class="btn-sm btn-primary" type="button" onclick="reply_msg(<?=$row['m_seq']?>)">回覆</button></div>
+                    <div  class="col-1 offset-6"><button class="btn-sm btn-primary" type="button" value="<?=$row['m_seq']?>">回覆</button></div>
                 </div>
                 <div style="min-height:80px" class="border border-primary"><?=$row['m_con']?></div>
 
@@ -116,9 +113,8 @@ do{ ?>
     </div>
 </div>
 
-
 <div class="modal fade" id="reply_form" role="dialog">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-dialog-centered">
 		<div class=" modal-content">
 			<div class="modal-header">
             <h3 class="modal-title">回覆留言</h3>
@@ -163,45 +159,4 @@ do{ ?>
 	</div>
 </div>	
 
-
-<script>
-
-check = <?=$_SESSION['check']?>;
-
-function reply_msg(msg_seq){
-    $('#reply_form').modal('show');
-    $('#reply_send').on('click', function() {
-        
-    if($('input[name=check]').val()==check){
-			// get input value
-			var rname = $('#modalname').val();
-			var email = $('#modalemail').val();	
-			var con = $('#modalcon').val();	
-			
-			// check empty
-			if(rname && email && con)
-			{
-                // hide modal
-				$('#reply_form').modal('hide');
-                
-                // send reply message to api
-                $.post("./api/reply_msg_api.php",{msg_seq,rname,email,con,check},function(xx){
-                    alert(xx);
-                    window.location.reload();
-                });
-			}
-			else
-			{
-				swal({
-				  title: '錯誤',
-				  text: '欄位不能為空',
-				  type: 'error',
-				  confirmButtonClass: "btn btn-info",
-				  buttonsStyling: false
-				})
-			}
-        }
-	});
-}
-
-</script>
+<script>check = <?=$_SESSION['check']?>;</script>

@@ -12,6 +12,12 @@
 <!-- Sweet Alert 2 -->
 <script src="js/sweetalert2.all.min.js"></script>
 
+<!-- WOW.js animate  -->
+<script src="js/wow.min.js"></script>
+
+<!-- Particles v2.0.0 -->
+<script src="js/particles.min.js"></script>
+
 
 
 
@@ -22,6 +28,12 @@
 
 <!-- 團購系統用 -->
 <script src="./js/gb.js"></script>
+
+<!-- 課程查詢系統用 -->
+<script src="./js/class_course.js"></script>
+
+<!-- 無登入客服系統用 -->
+<script src="./js/online_service.js"></script>
 
 <!-- 其他 -->
 <script src="js/codinglab.js"></script>

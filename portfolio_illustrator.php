@@ -2,7 +2,7 @@
 
     $pic_cnt = 6;
     $page_now = 1;
-    $pic_total = 19;
+    $pic_total = 21;
     $page_total = ceil($pic_total / $pic_cnt);
 
     if(!empty($_GET["page"])){

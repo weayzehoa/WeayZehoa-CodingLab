@@ -21,7 +21,13 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Roboto" rel="stylesheet">
 <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"> -->
 
+<!-- Animate CSS 3.7.0 -->
+<!-- <link rel="stylesheet" href="css/animate.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <!-- 本站自己的CSS -->
 <link rel="stylesheet" href="./css/codinglab.css">
 
 </head>
+
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(img/bg.jpg);">

@@ -1,9 +1,8 @@
+(function($){
 
   // ==================== 宣告所有照片位置並放入陣列中 ==============================
 var pic200 = [];
 var pic920 = [];
-var title = [];
-var word = [];
     for(i=0;i<=15;i++){
         pic200[i] = "./img/carousel/2m-"+(i+1)+".jpg";
         pic920[i] = "./img/carousel/92m-"+(i+1)+".jpg";
@@ -146,3 +145,5 @@ $("#cover").click(function(){
     $("#cover").css("display","none");
     $("#show").css("display","none");
 });
+
+})($)

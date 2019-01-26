@@ -1,3 +1,34 @@
+<?php
+    $today = date("Y-m-d",$nt);
+    // $today = "2019-01-29"; 測試用
+    $sql = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_date = '".$today."' and a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq";
+    $ro = mysqli_query($link,$sql);
+    $num = mysqli_num_rows($ro);
+    $row = mysqli_fetch_assoc($ro);
+
+?>
+
+<Style>
+img:hover{
+    cursor:pointer;
+    /* filter: contrast(4); */
+    /* filter: brightness(3); */
+    /* filter: grayscale(50%); */
+    /* opacity:0.5; */
+    /* filter: blur(3px); */
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.9));
+}
+
+#modalimg{
+    background-color:rgba(0,0,0,0.9);
+}
+
+#movie:hover{
+    cursor:pointer;
+}
+
+</Style>
+
 <body onload="ShowTime()">
 
 <!-- 本站歡迎畫面 -->
@@ -15,50 +46,41 @@
                 <p>我是 吳偉召 (Roger Wu)，目前正在 勞動部勞動力發展署北基宜花金馬分署－泰山職訓中心 PHP 資料庫網頁設計班 (第二期)，就讀學習 PHP 資料庫網頁設計。</p>
                 <p>這個網站是我在課程中所學到的一些東西，目前用來練習設計網站的一些功能，並放置我的履歷及一些作品。</p>
                 <p>整個網站設計前端主要使用 Bootstrap 及 JQuery 設計，後端使用 PHP 及 MySQL 資料庫架構。</p>
+                <p>本網站尚未完全實現RWD模式，某些位置有錯位問題，請使用Chrome瀏覽器全螢幕瀏覽。</p>
                 <p>歡迎您測試與瀏覽，並不吝指教。(目前尚有些驗證尚未做得很完善，請高手們指導，感謝。)</p>
                 </h5>
                 <br>
-                <p>目前進度：期末作業-課程查詢系統</p>
-                <br>
-                <!-- <p>網站整個 Source Code 放置於 我的 <a href="https://github.com/weayzehoa/WeayZehoa-CodingLab"> GitHub </a> 上。有興趣的朋友可以自行參考。</p> -->
-                <br>
-                <p></p>
-                <br>
+                <p>網站整個 Source Code 放置於 我的 <a href="https://github.com/weayzehoa/WeayZehoa-CodingLab"> GitHub </a> 上。</p>
             </div>
 
             <div class="row">
-                <div class="col-6 myconbg" >
-                    <div class="bg-white br10_pa10">
-                        <p>網站誌事：</p>
-                        <p>2019/1/10：實驗室-留言板.</p>
-                        <p>2019/1/9：履歷完成.</p>
-                        <p>2019/1/6：履歷建置.</p>
-                        <p>2019/1/6：調整版型.</p>
-                        <p>2019/1/5：期末作業-團購系統完成.</p>
-                        <p>2018/12/29：期末作業-團購系統開始.</p>
-                        <p>2018/12/27：實驗室-輪播頁面.</p>
-                        <p>2018/12/26：網站前後台整合在一起.</p>
-                        <p>2018/12/23：修改網站版型架構.</p>
-                        <p>2018/12/22：會員管理系統建立.</p>
-                        <p>2018/12/16：網站開始構建, 前後台各自獨立.</p>
+                <div class="col-6 myconbg margin_b10">
+                    <div class="bg-white br10_pa10 text-center">
+                        <p><i class="fas fa-images text-dark"></i>&nbsp;<a href="?g=pf_ps">Photoshop作品</a>&nbsp;<i class="fas fa-images text-dark"></i></p>
+                        <div><a href="?g=pf_ps"><img width="100%" height="100%" src="img/resume/photoshop/p2.jpg"></a></div>
                     </div>
                 </div>
-                <div class="col-6 myconbg" >
-                    <div class="bg-white br10_pa10">
-                        <p>網站誌事：</p>
-                        <p>2019/1/14：期末作業-課程查詢系統後台功能</p>
-                        <p>2019/1/13：期末作業-課程查詢系統開始</p>
-                        <p>2019/1/13：實驗室-無登入線上客服系統.</p>
-                        <p>2019/1/12：期末作業-建置參與者管理分頁及選單調整</p>
-                        <p>2019/1/12：實驗室-時鐘</p>
-                        <p>2019/1/12：作品-illustrator作品.</p>
-                        <p>2019/1/12：作品-Photoshop作品.</p>
-                        <p>2019/1/12：調整版型.</p>
-                        <p>2019/1/11：作品-產品企劃開發.</p>
-                        <p>2019/1/10：實驗室-留言板.</p>
+                <div class="col-6 myconbg margin_b10">
+                    <div class="bg-white br10_pa10 text-center">
+                        <p class="text-center"><i class="fas fa-images text-dark"></i>&nbsp;<a href="?g=pf_il">illustrator作品</a>&nbsp;<i class="fas fa-images text-dark"></i></p>
+                        <div><a href="?g=pf_il"><img width="100%" height="100%" src="img/resume/illustrator/i3.png"></a></div>
+                    </div>
+                </div>
+                <div class="col-6 myconbg margin_b10">
+                    <div class="bg-white br10_pa10 text-center">
+                        <p><i class="fas fa-archive text-dark"></i>&nbsp;<a href="?g=pf_pr">產品開發作品</a>&nbsp;<i class="fas fa-archive text-dark"></i></p>
+                        <div><a href="?g=pf_pr"><img width="100%" height="100%" src="img/resume/product/penpaper.jpg"></a></div>
+                    </div>
+                </div>
+                <div class="col-6 myconbg margin_b10 text-center">
+                    <div class="bg-white br10_pa10 text-center">
+                        <p id="movie"><i class="fab fa-youtube"></i>&nbsp;<span class="text-primary">新聞採訪報導</span>&nbsp;<i class="fab fa-youtube"></i></p>
+                        <div><iframe width="100%" height="315" src="https://www.youtube.com/embed/9PFhlIqJNcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     </div>
                 </div>
             </div>
+        </div>
+
 <!-- 
             <div  class="bg-white text-dark mycol">第一欄第三列</div>
             
@@ -120,7 +142,6 @@
                 </div>
             </div> -->
 
-        </div>
 
 
 
@@ -137,8 +158,25 @@
                     <div id="showtime"></div>
                 </form>
             </div>
+            <div class="bg-white mycol">
+                    <div class="text-center"><i class="fas fa-calendar-alt"></i><a href="?g=course">&nbsp;PHP 資料庫網頁設計班課程&nbsp;</a><i class="fas fa-calendar-alt"></i></div>
+                    <hr>
+                    <?php   if($num >=1){
+                            do { ?>
+
+                                <div>今日課程：<span class="text-primary"><?=$row['c_n_name']?></span></div>
+                                <div>授課老師：<span class="text-primary"><?=$row['c_t_name']?></span>　時數：<span class="text-primary"><?=$row['c_num']?></span></div>
+                                <hr>
+
+                    <?php   }while ($row = mysqli_fetch_assoc($ro));
+                            }else{ ?>
+                                <div class="text-danger">今日放假日，無課程</div>
+                    <?php   } ?>
+
+                </form>
+            </div>
             <div class="bg-white mycol" >
-                <p class="text-center">團購系統輪播</p>
+                <p class="text-center"><i class="fas fa-shopping-cart"></i>&nbsp;<a href="?g=gb">團購系統輪播</a>&nbsp;<i class="fas fa-shopping-cart"></i></p>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -163,3 +201,10 @@
         </div>
     </div><br>
 </div>
+
+
+<div class="modal fade " id="modalimg" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div id="modal_imgshow" class="modal-body"><iframe width='720' height='480' src='' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>
+	</div>
+</div>	
