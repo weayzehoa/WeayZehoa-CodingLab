@@ -5,9 +5,7 @@
 // 圖片驗證失敗 echo 4; 防止造假圖片資料.
 // 關閉團購 echo 5;
 // 開啟團購 echo 6;
-
-$link = mysqli_connect("localhost", "root", "", "codinglab");
-mysqli_query($link, "set names utf8mb4") or die("資料庫GG了");
+include_once("../inc/setdb.php");
 
 $s =""; //利用參數判斷更新圖片或文字資料
 
@@ -29,9 +27,7 @@ if (!empty($_POST['id']) && !empty($_POST['permit'])) {
             $sql = "SELECT * from gbuy where g_seq = '".$_POST['gseq']."' and g_del = 0 ";
             $ro1 = mysqli_query($link, $sql);
             $row1 = mysqli_fetch_assoc($ro1);
-
-            $nt=strtotime("+7hour");
-            $time = date("YmdHis", $nt);
+            $time = date("YmdHis");
             $new_name="gbuy".$time;
             $ext_name =1;
             if ($_FILES['gbpic']["type"] == "image/jpeg") {

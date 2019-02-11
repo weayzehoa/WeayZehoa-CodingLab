@@ -777,7 +777,7 @@
 	</div>
 </div>
 
-
+<div id="particles-js"></div>
 <?php
     include_once("./inc/foot.php");
     include_once("./inc/js.php");

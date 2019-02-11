@@ -1,5 +1,5 @@
 <?php
-    $today = date("Y-m-d",$nt);
+    $today = date("Y-m-d");
     // $today = "2019-01-29"; 測試用
     $sql = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_date = '".$today."' and a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq";
     $ro = mysqli_query($link,$sql);
