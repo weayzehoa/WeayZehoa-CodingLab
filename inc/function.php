@@ -46,8 +46,8 @@ function web_log($log)
 {
     $link = mysqli_connect("localhost", "root", "", "codinglab");
     mysqli_query($link, "set names utf8");
-    $nt=strtotime("+7hour");
-    $time = date("Y-m-d H:i:s", $nt);
+    date_default_timezone_set("Asia/Taipei");
+    $time = date("Y-m-d H:i:s");
     $sql = "INSERT into web_log value(null,'".$_SESSION["id"]."','".$log."','".$time."')";
     mysqli_query($link, $sql) or die("新增失敗，語法錯誤".$sql);
 }
@@ -55,8 +55,8 @@ function web_log($log)
 //上傳檔案功能
 function new_file($fname)
 {
-    $nt = strtotime("+7hour");
-    $new_file_name=date("YmdHis", $nt);
+    date_default_timezone_set("Asia/Taipei");
+    $new_file_name=date("YmdHis");
     $f_file_name =1;
     if ($_FILES[$fname]["type"] == "image/jpeg") {
         $f_file_name=".jpg";

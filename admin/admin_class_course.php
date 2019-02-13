@@ -1,6 +1,6 @@
 <?php
     check_permission ();
-    $today = date("Y-m-d",$nt);
+    $today = date("Y-m-d");
     // $today = "2019-01-29"; 測試用
 ?>
 

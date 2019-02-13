@@ -1,8 +1,7 @@
 <?php
-    $nt=strtotime("+7hour");
     $time_s = 6 * date("s"); //秒針目前角度位置
     $time_m = (date("i")*60 + date("s")) * (360/3600); //分針目前角度位置
-    $time_h = (( (date("H",$nt)-12)*3600 + date("i")*60 + date("s"))*(360/43200)); //時針目前角度位置
+    $time_h = (( (date("H")-12)*3600 + date("i")*60 + date("s"))*(360/43200)); //時針目前角度位置
 ?>
 
  <style>

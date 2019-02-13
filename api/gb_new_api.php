@@ -23,8 +23,8 @@ if (!empty($_POST['id']) && !empty($_POST['permit'])) {
         }
         if ($row['p_permit']==1 || $row['p_permit']==3) {
             if (!empty($_FILES)) {
-                $nt=strtotime("+7hour");
-                $time = date("YmdHis", $nt);
+                date_default_timezone_set("Asia/Taipei");
+                $time = date("YmdHis");
                 $new_name="gbuy".$time;
                 $ext_name =1;
                 if ($_FILES['gbpic']["type"] == "image/jpeg") {

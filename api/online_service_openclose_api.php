@@ -3,7 +3,7 @@
 
     if (!empty($_GET["open_service"])) {
         if (empty($_SESSION["qa"])) {
-            $nqa = date("YmdHis", $nt);
+            $nqa = date("YmdHis");
             $nqa1 = rand(1000000, 9999999);
             // echo $nqa.$nqa1;
             $_SESSION["qa"] = $nqa.$nqa1;

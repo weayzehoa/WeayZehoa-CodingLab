@@ -1,5 +1,5 @@
 <?php
-    $today = date("Y-m-d",$nt);
+    $today = date("Y-m-d");
     // $today = "2019-01-29"; 測試用
     $sql = "SELECT * from class a, class_week b, class_name c, class_teacher d where a.c_date = '".$today."' and a.c_week = b.c_w_seq and a.c_name = c.c_n_seq and a.c_teacher = d.c_t_seq";
     $ro = mysqli_query($link,$sql);
@@ -33,13 +33,13 @@ img:hover{
 
 <!-- 本站歡迎畫面 -->
 
-<div class="myheadbg text-white container col-8 text-shadow-bu1 text-center">
+<div class="myheadbg text-white container col-lg-8 text-shadow-bu1 text-center">
         <h4>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h4>
 </div>
 
-<div class="container col-8 myconbg">
+<div class="container col-lg-8 myconbg">
     <div class="row">
-        <div class="col-9">
+        <div class="col-lg-9">
             <div class="bg-white text-dark mycol">
                 <h4>嗨! 你好，</h4>
                 <h5>
@@ -54,25 +54,25 @@ img:hover{
             </div>
 
             <div class="row">
-                <div class="col-6 myconbg margin_b10">
+                <div class="col-md-6 myconbg margin_b10">
                     <div class="bg-white br10_pa10 text-center">
                         <p><i class="fas fa-images text-dark"></i>&nbsp;<a href="?g=pf_ps">Photoshop作品</a>&nbsp;<i class="fas fa-images text-dark"></i></p>
                         <div><a href="?g=pf_ps"><img width="100%" height="100%" src="img/resume/photoshop/p2.jpg"></a></div>
                     </div>
                 </div>
-                <div class="col-6 myconbg margin_b10">
+                <div class="col-md-6 myconbg margin_b10">
                     <div class="bg-white br10_pa10 text-center">
                         <p class="text-center"><i class="fas fa-images text-dark"></i>&nbsp;<a href="?g=pf_il">illustrator作品</a>&nbsp;<i class="fas fa-images text-dark"></i></p>
                         <div><a href="?g=pf_il"><img width="100%" height="100%" src="img/resume/illustrator/i3.png"></a></div>
                     </div>
                 </div>
-                <div class="col-6 myconbg margin_b10">
+                <div class="col-md-6 myconbg margin_b10">
                     <div class="bg-white br10_pa10 text-center">
                         <p><i class="fas fa-archive text-dark"></i>&nbsp;<a href="?g=pf_pr">產品開發作品</a>&nbsp;<i class="fas fa-archive text-dark"></i></p>
                         <div><a href="?g=pf_pr"><img width="100%" height="100%" src="img/resume/product/penpaper.jpg"></a></div>
                     </div>
                 </div>
-                <div class="col-6 myconbg margin_b10 text-center">
+                <div class="col-md-6 myconbg margin_b10 text-center">
                     <div class="bg-white br10_pa10 text-center">
                         <p id="movie"><i class="fab fa-youtube"></i>&nbsp;<span class="text-primary">新聞採訪報導</span>&nbsp;<i class="fab fa-youtube"></i></p>
                         <div><iframe width="100%" height="315" src="https://www.youtube.com/embed/9PFhlIqJNcc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -145,7 +145,7 @@ img:hover{
 
 
 
-        <div class="col-3">
+        <div class="col-lg-3">
             <!-- <div class="bg-white mycol" >月曆預定地</div>
             <div class="bg-white mycol" >數位時鐘預定地</div>
             <div class="bg-white mycol" >類比時鐘預定地</div>
@@ -157,6 +157,9 @@ img:hover{
                 <form id="form1" runat="server">
                     <div id="showtime"></div>
                 </form>
+            </div>
+            <div class="bg-white mycol">
+                    <div id="showtime"><audio class="col-12" src="./audio/ms.mp3" autoplay loop controls>您的瀏覽器不支援HTML5 Audio標籤</audio></div>
             </div>
             <div class="bg-white mycol">
                     <div class="text-center"><i class="fas fa-calendar-alt"></i><a href="?g=course">&nbsp;PHP 資料庫網頁設計班課程&nbsp;</a><i class="fas fa-calendar-alt"></i></div>

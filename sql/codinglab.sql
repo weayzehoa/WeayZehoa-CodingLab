@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2019-02-11 08:09:22
+-- 產生時間： 2019-02-12 00:53:14
 -- 伺服器版本: 10.1.36-MariaDB
 -- PHP 版本： 7.2.10
 
@@ -187,7 +187,8 @@ INSERT INTO `class` (`c_seq`, `c_date`, `c_week`, `c_name`, `c_teacher`, `c_num`
 (145, '2018-10-30', 2, 19, 1, 2),
 (146, '2018-11-27', 2, 19, 1, 2),
 (147, '2019-01-29', 2, 19, 1, 2),
-(148, '2019-02-26', 2, 19, 1, 2);
+(148, '2019-02-26', 2, 19, 1, 2),
+(149, '2019-02-12', 2, 20, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,8 @@ INSERT INTO `class_name` (`c_n_seq`, `c_n_name`) VALUES
 (14, '學員輔導'),
 (17, '結訓'),
 (18, '乙級學科考試'),
-(19, '聯課');
+(19, '聯課'),
+(20, '職涯規劃');
 
 -- --------------------------------------------------------
 
@@ -660,13 +662,13 @@ ALTER TABLE `service_log`
 -- 使用資料表 AUTO_INCREMENT `class`
 --
 ALTER TABLE `class`
-  MODIFY `c_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `c_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- 使用資料表 AUTO_INCREMENT `class_name`
 --
 ALTER TABLE `class_name`
-  MODIFY `c_n_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `c_n_seq` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- 使用資料表 AUTO_INCREMENT `class_teacher`

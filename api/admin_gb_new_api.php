@@ -4,10 +4,7 @@
 // 非本站會員 echo 3;   防止造假POST資料.
 // 圖片格式錯誤 echo 4; 防止上傳偽造的圖片.
 // 驗證會員失敗 echo 5; 防止造假POST資料.
-
-$link = mysqli_connect("localhost", "root", "", "codinglab");
-mysqli_query($link, "set names utf8mb4") or die("資料庫GG了");
-
+include_once("../inc/setdb.php");
 
 if (!empty($_POST['id']) && !empty($_POST['permit'])) {
     $sql = "SELECT * from player where p_id ='".$_POST['id']."' and p_permit ='".$_POST['permit']."' and p_del = 0 ";
@@ -23,8 +20,7 @@ if (!empty($_POST['id']) && !empty($_POST['permit'])) {
         }
         if ($row['p_permit']==1) {
             if (!empty($_FILES)) {
-                $nt=strtotime("+7hour");
-                $time = date("YmdHis", $nt);
+                $time = date("YmdHis");
                 $new_name="gbuy".$time;
                 $ext_name =1;
                 if ($_FILES['gbpic']["type"] == "image/jpeg") {
