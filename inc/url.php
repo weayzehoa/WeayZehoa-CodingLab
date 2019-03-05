@@ -22,6 +22,7 @@
     $url["online_service"]="./online_service.php";
     $url["clock"]="./clock.php";
     $url["course"]="./class_course.php";
+    $url["class_search"]="./class_search.php";
     $url["out"]="./inc/logout.php";
     $url["testbg"]="./testbg.php";
     $url["test"]="./test.php";

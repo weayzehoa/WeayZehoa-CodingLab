@@ -25,7 +25,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/a5.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">DigiMemo – Digital Note with Memory</h5>
+                <h6 class="card-title">DigiMemo – Digital Note with Memory</h6>
                 <a href="./img/resume/product/a5.pdf" target="_blank" class="btn btn-primary">產品型錄</a>
             </div>
             </div>
@@ -34,7 +34,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/l2.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">DigiMemo – Digital Note with Memory and Tablet Combo</h5>
+                <h6 class="card-title">DigiMemo – Digital Note with Memory and Tablet Combo</h6>
                 <a href="./img/resume/product/l2.pdf" target="_blank" class="btn btn-primary">產品型錄</a>
             </div>
             </div>
@@ -43,7 +43,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/acedialer.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">AceDialer – Bluetooth Speed Dial Controller</h5>
+                <h6 class="card-title">AceDialer – Bluetooth Speed Dial Controller</h6>
                 <a href="./img/resume/product/acedialer.pdf" target="_blank" class="btn btn-primary">產品型錄</a>
             </div>
             </div>
@@ -52,7 +52,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/penpaper.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">PenPaper – Bluetooth Digital Notepad and Pen Tablet for Windows</h5>
+                <h6 class="card-title">PenPaper – Bluetooth Digital Notepad and Pen Tablet for Win</h6>
                 <a href="./img/resume/product/penpaper.pdf" target="_blank" class="btn btn-primary">產品型錄</a>
             </div>
             </div>
@@ -61,7 +61,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/flair2.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Flair II - GT-504 & GT-302 Pen & Graphic Tablet</h5>
+                <h6 class="card-title">Flair II - GT-504 & GT-302 Pen & Graphic Tablet</h6>
                 <a href="./img/resume/product/flair2.pdf" target="_blank" class="btn btn-primary">產品型錄</a>
             </div>
             </div>
@@ -70,7 +70,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/hppen.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">HP Executive Tablet Pen R2 ODM Project</h5>
+                <h6 class="card-title">HP Executive Tablet Pen R2 ODM Project</h6>
             </div>
             </div>
         </div>  
@@ -78,7 +78,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/p1.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">專利發明</h5>
+                <h6 class="card-title">專利發明</h6>
                 <a href="./img/resume/product/p1-t.pdf" target="_blank" class="btn btn-primary">台灣證書</a>　<a href="./img/resume/product/p1-u.pdf" target="_blank" class="btn btn-primary">美國證書</a>
             </div>
             </div>
@@ -87,7 +87,7 @@ img:hover{
             <div class="card">
             <img class="card-img-top" src="./img/resume/product/p2.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">專利發明</h5>
+                <h6 class="card-title">專利發明</h6>
                 <a href="./img/resume/product/p2-t.pdf" target="_blank" class="btn btn-primary">台灣證書</a>　<a href="./img/resume/product/p2-c.pdf" target="_blank" class="btn btn-primary">大陸證書</a>
             </div>
             </div>

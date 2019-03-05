@@ -32,6 +32,7 @@ $row = mysqli_fetch_assoc($ro);
                 <div class="col-6 myconbg margin_b10" >
                     <div class="bg-white br10_pa10">
                         <p>網站誌事一：</p>
+                        <p>2019/1/12：作品-illustrator作品.</p>
                         <p>2019/1/12：作品-Photoshop作品.</p>
                         <p>2019/1/12：調整版型.</p>
                         <p>2019/1/11：作品-產品企劃開發.</p>
@@ -51,6 +52,8 @@ $row = mysqli_fetch_assoc($ro);
                 <div class="col-6 myconbg margin_b10" >
                     <div class="bg-white br10_pa10">
                         <p>網站誌事二：</p>
+                        <p>2019/2/12：修正時差問題</p>
+                        <p>2019/2/12：更新課程資料</p>
                         <p>2019/1/26：修正後台團購管理-參與者管理分頁位置</p>
                         <p>2019/1/26：修正首頁-照片尺寸</p>
                         <p>2019/1/26：修正實驗室-留言板重複資料BUG</p>
@@ -64,7 +67,6 @@ $row = mysqli_fetch_assoc($ro);
                         <p>2019/1/13：實驗室-無登入線上客服系統.</p>
                         <p>2019/1/12：期末作業-建置參與者管理分頁及選單調整</p>
                         <p>2019/1/12：實驗室-時鐘</p>
-                        <p>2019/1/12：作品-illustrator作品.</p>
                     </div>
                 </div>
             </div>
