@@ -44,7 +44,22 @@
     $url["clm"]="./admin/admin_class_course.php";
 
 //==========判斷連結=====================================
+    // $gogo = "./welcome.php";
+    // if(!empty($_GET["g"])){$goto = $_GET["g"]; $gogo = $url[$goto];}
+
+//==========防止使用者自行亂輸入g=xxxx找不到頁面導致畫面無法顯示, 並將其導至首頁
+    $g = array('index','regist','bootstrap-carousel','noncover-carousel','comingsoon','gbnew','gbmod','gb','gbv',
+                'gblist','login','memmod','pwchange','resume','pf_ps','pf_il','pf_wb','pf_pr','msgboard','online_service',
+                'clock','course','class_search','out','testbg','test','admin','adminwelcome','acc','acc_add','acc_up',
+                'acc_del','gbuy','gbuy_buyer','gbmodify','olsv_list','olsv_re','molsv_list','molsv_re','clm');
     $gogo = "./welcome.php";
-    if(!empty($_GET["g"])){$goto = $_GET["g"]; $gogo = $url[$goto];}
+    if (!empty($_GET["g"])) {
+        for ($i=0;$i<count($g);$i++) {
+            if ($_GET["g"] == $g[$i]) {
+                $goto = $_GET["g"];
+                $gogo = $url[$goto];
+            }
+        }
+    }
 
 ?>

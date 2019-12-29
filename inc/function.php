@@ -44,7 +44,7 @@ function check_login()
 //紀錄資料庫操作
 function web_log($log)
 {
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     date_default_timezone_set("Asia/Taipei");
     $time = date("Y-m-d H:i:s");
@@ -71,7 +71,7 @@ function new_file($fname)
 //檢驗使用者
 function check_player($ckpl)
 {
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     $sql = "SELECT * from player where p_seq = '".$ckpl."'  and p_del = 0 ";
     $ro = mysqli_query($link, $sql);
@@ -81,7 +81,7 @@ function check_player($ckpl)
 
 //抓取性別資料表
 function get_sex(){
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     $sql = "select * from player_sex";
     $ro = mysqli_query($link, $sql);
@@ -95,7 +95,7 @@ function get_sex(){
 
 //抓取權限資料表
   function get_permit(){
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     $sql = "select * from player_permission";
     $ro = mysqli_query($link, $sql);
@@ -109,7 +109,7 @@ function get_sex(){
 
 //抓取會員資料表
 function get_player(){
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     $sql = "SELECT * from player where p_del = 0";
     $ro6 = mysqli_query($link,$sql);
@@ -125,7 +125,7 @@ function get_player(){
 
 //抓取課程老師名字資料表
 function get_clteacher(){
-    $link = mysqli_connect("localhost", "root", "", "codinglab");
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link, "set names utf8");
     $sql = "SELECT * from class_teacher";
     $ro = mysqli_query($link,$sql);
@@ -139,7 +139,7 @@ function get_clteacher(){
 
 //抓取課程名稱資料表
 function get_clname(){
-    $link = mysqli_connect('localhost','root','','codinglab');
+    $link = mysqli_connect("localhost", "medianet", "Media&net&admin", "codinglab");
     mysqli_query($link,"set names utf8");
     $sql = "SELECT * from class_name";
     $ro = mysqli_query($link,$sql);

@@ -34,3 +34,14 @@
 ?>
 </body>
 </html>
+<?php // <!-- 金鑰 --> ?>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LeVFbQUAAAAAFlrX2_9W0As3lPsAuMyrgqUruN1"></script> -->
+<?php // <!-- 密鑰 --> ?>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LeVFbQUAAAAAL_4GAtz7dI4eJOVduL47Cg3N_XA"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('reCAPTCHA_site_key', {action: 'homepage'}).then(function(token) {
+         ...
+      });
+  });
+  </script> -->

@@ -45,7 +45,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="?g=course"><i class="fas fa-calendar-alt"></i>&nbsp;課程查詢系統</a>
                 </li>
-
             </ul>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">

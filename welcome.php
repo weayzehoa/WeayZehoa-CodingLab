@@ -37,7 +37,10 @@ img:hover{
         <h4>歡迎來到 WeayZehoa Coding Lab. 程式實驗室</h4>
 </div>
 
+
 <div class="container col-lg-8 myconbg">
+<script async src="https://cse.google.com/cse.js?cx=006257513004862033964:umlxzsbfuk8"></script>
+<div class="gcse-search"></div>
     <div class="row">
         <div class="col-lg-9">
             <div class="bg-white text-dark mycol">
